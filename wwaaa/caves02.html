@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>World Wide Adventure</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="wwa.js"></script>
+</head>
+<body>
+    <div id="wrapper" style="display: none">
+        <h2> WWA Wing Version: <span id="version"></span></h2>
+        <div id="wwa-wrapper" class="wwa-size-box" data-wwa-mapdata="caves02.dat" data-wwa-loader="wwaload.js" data-wwa-urlgate-enable="true">
+        </div>
+    </div>
+    <div id="aawwa-wrapper" style="font-family: 'ＭＳ ゴシック', 'Osaka－等幅', 'Takaoゴシック', monospace; font-size: 12px; margin: 0 auto; width: 70em; position: relative;">
+        <h2>WWAAA:World Wide Adventure in Ascii Art</h2>
+        <div id="aa-field" style="font-size: 12px; background-color: #CCCCCC; float: left; width: 40em;">しばらくお待ち下さい...</div>
+        <div style="float: left; font-size: 12px; background-color: #333333; color:#FFFFFF; width: 20em; height: 50em;">
+            生命力: <span id="aa-eng"></span><br />
+            攻撃力: <span id="aa-str"></span><br />
+            防御力: <span id="aa-def"></span><br />
+            所持金: <span id="aa-gld"></span><br />
+            アイテム1: <span id="aa-item-0"></span><br />
+            アイテム2: <span id="aa-item-1"></span><br />
+            アイテム3: <span id="aa-item-2"></span><br />
+            アイテムQ: <span id="aa-item-3"></span><br />
+            アイテムW: <span id="aa-item-4"></span><br />
+            アイテムE: <span id="aa-item-5"></span><br />
+            アイテムA: <span id="aa-item-6"></span><br />
+            アイテムS: <span id="aa-item-7"></span><br />
+            アイテムD: <span id="aa-item-8"></span><br />
+            アイテムZ: <span id="aa-item-9"></span><br />
+            アイテムX: <span id="aa-item-10"></span><br />
+            アイテムC: <span id="aa-item-11"></span><br />
+            ---------------------------------<br />
+            上下左右キー: 移動<br />
+            F1: 戦闘予測<br />
+            F5: QuickLoad<br />
+            F6: QuickSave<br />
+            F7: RestartGame<br />
+            F8: Goto WWA<br />
+            F12: ヘルプ<br />
+            ---------------------------------<br />
+            ■: 背景番号0<br />
+            □: 壁<br />
+            ◎: 背景ジャンプゲート<br />
+            ＊: 背景URLゲート<br />
+            物: 通常物体（通り抜け不可）<br />
+            通: 通常物体（通り抜け可）<br />
+            Ｍ: メッセージ<br />
+            怪: モンスター<br />
+            ア: アイテム<br />
+            扉: 扉<br />
+            ス: ステータス変化<br />
+            売: 物を売る<br />
+            買: 物を買う<br />
+            Ｕ: 物体URLゲート<br />
+            点: スコア表示<br />
+            乱: ランダム選択<br />
+            択: 二者択一<br />
+            Ｊ: 物体ジャンプゲート<br />
+            Ｐ : プレイヤー<br />
+            無印: 道
+        </div>
+    </div>
+    <footer id="copyright" style="clear: left">
+        <p>デバッグ用なので、Shiftを押しながら移動すると通り抜けができない部分も通行できます。</p>
+        <p>効果音はまだ鳴りません。マクロはまもなく対応予定です。</p>
+        <p> Internet RPG &quot;<a href="http://www.wwajp.com">World Wide Adventure</a>&quot; &copy;1996-2009 NAO</p>
+        <p> &quot;<a href="http://wwawing.com/">WWA Wing</a>&quot; &copy;2013-2015 Project Wing/Matsuyuki(rmn.)</p>
+    </footer>
+</body>
+</html>
