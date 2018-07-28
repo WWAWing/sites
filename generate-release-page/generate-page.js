@@ -4,4 +4,4 @@ const fs = require("fs");
 
 const compile = pug.compileFile("index.pug", { pretty: true });
 html = compile(releases);
-fs.writeFileSync("../index.html", html + "\n");
+fs.writeFileSync("../docs/index.html", html + "\n");
