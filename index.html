@@ -28,130 +28,16 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <!-- es6-promise (c) 2014 Yehuda Katz, Tom Dale, Stefan Penner and contributors (Conversion to ES6 API by Jake Archibald) MIT License-->
+    <script src="https://unpkg.com/es6-promise@4.2.4/dist/es6-promise.js"></script>
+    <!-- whatwg-fetch Copyright (c) 2014-2016 GitHub, Inc. MIT License-->
+    <script src="https://unpkg.com/whatwg-fetch@2.0.4/fetch.js"></script>
+
     <!-- Custom styles for this template -->
     <link href="./carousel.css" rel="stylesheet">
+    <link href="./style.css" rel="stylesheet">
 
-    <!-- overwrite css -->
-    <style>
-
-    h1 {
-      padding: 5px;
-      border-width: 0 0 1px 0;
-      border-style: solid;
-      border-color: #FFFFFF;
-    }
-
-    a.navbar-brand  {
-      padding: 5px 15px;
-    }
-    span.version-wwa {
-      font-size: 12px;
-      color: #666666;
-    }
-
-    nav.navbar-wwawing {
-      background-color: rgba( 255, 255, 255, 0.95 );
-      color: #000000;
-      box-shadow: 10px 10px 10px;
-    }
-    .navbar-wwawing .navbar-toggle .icon-bar {
-      background-color: #111111;
-    }
-    ul.navbar-nav>li>a  {
-      display: block;
-      border: #000000 solid;
-      border-width: 1px 1px 1px 5px;
-      color: #111111;
-      font-weight: bold;
-      margin: 3px;
-      border-radius: 5px;
-    }
-
-    ul.navbar-nav>li>a.dl-wwa  {
-      border-color: #006600;
-      background-color: rgb(200, 255, 200);
-    }
-
-    ul.navbar-nav>li>a.dl-wwa:hover {
-      background-color: rgb(130, 255, 130);
-    }
-
-    ul.navbar-nav>li>a.report-bug-wwa  {
-      border-color: #660000;
-      background-color: rgb(255, 200, 200);
-    }
-
-    ul.navbar-nav>li>a.report-bug-wwa:hover {
-      background-color: rgb(255, 130, 130);
-    }
-
-    ul.navbar-nav>li>a.other-wwa  {
-      border-color: #000066;
-      background-color: rgb(200, 200, 255);
-    }
-	    
-    ul.navbar-nav>li>a.btn-eratta  {
-      border-color: #333333;
-      background-color: rgb(255, 255, 255);
-    }
-
-    ul.navbar-nav>li>a.other-wwa:hover {
-      background-color: rgb(130, 130, 255);
-    }
-
-    .carousel-caption {
-      background-color: rgba( 0, 0, 0, 0.8 );
-      padding-left: 10px;
-      padding-right: 10px;
-    }
-
-    @media (max-width: 768px) {
-	    .carousel-caption h1 {
-		    font-size: 24px;
-	    }
-
-    }
-    @media (min-width: 768px) and (max-width: 991px) {
-
-	    .carousel-caption h1 {
-		    font-size: 28px;
-	    }
-	    .carousel-caption p {
-		    font-size: 14px;
-	    }
-    }
-    .navbar-brand {
-      text-align: center;
-    }
-
-    a.navbar-brand>img{
-      width: 100px;
-    }
-
-    a.back-to-top-button {
-      display: none;
-      width: 40px;
-      height: 40px;
-      background-color: #9999FF;
-      color: #FFFFFF;
-      text-align: center;
-      border-radius: 20px;
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      text-decoration: none;
-      font-size: 18px;
-      color: #FFFFFF;
-      font-weight: bold;
-      border: 5px #333399 solid;
-    }
-
-    a.back-to-top-button:hover {
-      background-color: #CCCCFF;
-    }
-
-    </style>
-    <script>
+   <script>
       $(document).ready( function() {
         var btn = $(".back-to-top-button");
         var goToExamples = $(".go-to-examples");
@@ -179,8 +65,17 @@
 
           return false;
         } );
-
-      } );
+        fetch("https://wwawing.com/latest-version.json?date=" + Date.now())
+          .then(function(response) {
+            return response.json();
+          })
+          .then(function(data){
+            $("#version-wwa-nav").text(data.version);
+          })
+          .catch(function(err) {
+            console.log(err);
+          })
+      });
 
     </script>
   </head>
@@ -211,7 +106,7 @@
               </button>
           <a class="navbar-brand" href="./">
               <img src="./wwawing-disp.png" alt="WWA Wing">
-              <span class="version-wwa">Ver. W3.15c+<span>
+              <span class="version-wwa" id="version-wwa-nav">Ver. W3.15c+<span>
           </a>
             </div>
         <div id="navbar" class="navbar-collapse collapse">
