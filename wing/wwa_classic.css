@@ -11,13 +11,17 @@
 .wwa-size-box {
     width: 560px;
     height: 440px;
-    font-size: 16px;
-    font-family: 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro', 'メイリオ','Meiryo','ＭＳ Ｐゴシック',sans-serif;
-    line-height:1.2;
-    text-indent:0px;
-    letter-spacing:0px;
+    font-size: 18px;
+    /*font-family: 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro', 'メイリオ','Meiryo','ＭＳ Ｐゴシック',sans-serif;*/
+    font-family: 'ＭＳ ゴシック', 'Osaka-mono', monospace;
+    line-height: 1.2;
+    text-indent: 0px;
+    text-shadow: 1px 0px 0px gray;
+    letter-spacing: 0px;
     word-spacing: 0px;
-    writing-mode:horizontal-tb;
+    writing-mode: horizontal-tb;
+    /* image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges; /* 高解像度のディスプレイでくっきり表示させるCSSコード(仮) */
 }
 
 div#wwa-wrapper {
@@ -48,6 +52,7 @@ div#wwa-sidebar {
     height: 440px;
     z-index: 102;
     background-color: #000000;
+    font-size: 16px;
 }
 
 
@@ -58,7 +63,6 @@ div#wwa-sidebar>div.wide-cell-row {
     border: 0px;
     width: 120px;
     height: 25px;
-    font-size: 14px;
 }
 
 div#wwa-sidebar>div.wide-cell-row.onpress/*, div#wwa-sidebar>div.wide-cell-row:hover*/ {
@@ -204,6 +208,7 @@ div#wwa-sidebar>div.item-cell.onpress/*, div#wwa-sidebar>div.item-cell:hover */ 
     top: 370px;
     left: 0px;
     z-index: 121;
+    font-size: 14px;
 }
 
 #cell-gotowwa {
@@ -397,14 +402,13 @@ div.item-disp {
     position: absolute;
     top: 0;
     left: 0;
-    width: 400px;
-    height: 400px;
-    padding: 0;
-    margin: 18px;
+    width: 440px;
+    height: 440px;
+    padding: 18px;
+    box-sizing: border-box;
     border-style: solid;
     border-width: 2px;
     border-color: #000000;
-    border-radius: 10px;
 /*    background-color: rgba( 255, 255, 255, 0.9 ); */ /*システムで指定することになりました。$colorで。*/
     cursor: pointer;
     overflow: auto;
@@ -418,8 +422,8 @@ div.item-disp {
 }
 #wwa-password-window>div.wwa-password-description {
     text-align: left;
-    font-size: 12px;
-    padding: 5px;
+    font-size: 14px;
+    padding: 8px;
 }
 
 #wwa-password-window>textarea {
@@ -477,6 +481,7 @@ div.item-disp {
     top: 20px;
     left: 140px;
     color: #FF0000;
+    text-shadow: 1px 0px 0px #FF8080;
 }
 
 
@@ -507,74 +512,6 @@ div.item-disp {
     transition-property: opacity;
     cursor: pointer; */
 }
-
- #wwa-cover>#version {
-     position: absolute;
-     top: 392px;
-     left: 0;
-     height: 16px;
-     font-size: 12px;
-     color: #000000;
-}
-
-#wwa-cover>#progress-message-container {
-    position: absolute;
-    top: 408px;
-    left: 0;
-    width: 560px;
-    height: 16px;
-    color: #000000;
-    font-size: 12px;
-    overflow: hidden;
-    text-align: left;
-    z-index: 305;
-}
-
-#wwa-cover>#progress-bar-bg {
-    position: absolute;
-    top: 424px;
-    left: 0;
-    width: 560px;
-    height: 16px;
-    background-color: #808080;
-    z-index: 310;
-}
-
-#wwa-cover>.progress-bar {
-    position: absolute;
-    top: 424px;
-    left: 0;
-    width: 0;
-    height: 16px;
-}
-
-#wwa-cover>#progress-bar {
-    background-color: #00FF90;
-    z-index: 315;
-}
-
-#wwa-cover>#progress-bar-audio {
-    background-color: #008aff;
-    z-index: 316;
-    
-}
-
-#wwa-cover>#progress-disp {
-    position: absolute;
-    top: 424px;
-    left: 440px;
-    width: 120px;
-    height: 16px;
-    background-color: #FF6A00;
-    color: #FFFFFF;
-    text-align: center;
-    font-weight: bold;
-    z-index: 320;
-    font-size: 12px;
-    overflow: hidden;
-}
-
-/* message window: z-index 400 */
 
 #wwa-audio-wrapper {
     position: absolute;
