@@ -1,7 +1,5 @@
 {
   "compilerOptions": {
-    "rootDir": "./src",
-    "outDir": "./lib",
     "target": "es5",
     "module": "commonjs",
     "moduleResolution": "node",
@@ -21,6 +19,6 @@
     "noUnusedLocals": true
   },
   "include": [
-    "src/**/*.ts"
+    "scripts/**/*.ts"
   ]
 }
