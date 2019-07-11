@@ -16,7 +16,8 @@
     "removeComments": true,
     "experimentalDecorators": true,
     "noUnusedParameters": false,
-    "noUnusedLocals": true
+    "noUnusedLocals": true,
+    "resolveJsonModule": true
   },
   "include": [
     "scripts/**/*.ts"
