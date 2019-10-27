@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
   <head>
     <meta charset="utf-8">
@@ -7,20 +7,16 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="WWA Wingは, ゲーム作成ツール「WWA」をさらに進化させるためのプロジェクトです。最近のブラウザでも動きます。">
     <meta name="author" content="WWA Wing Team">
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="./assets/wwawing/favicon.ico">
 
     <title>WWA Wing</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="./dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./assets/vendor/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="./dist/js/bootstrap.min.js"></script>
-    <script src="./assets/js/vendor/holder.js"></script>
-    <script src="./assets/js/ie10-viewport-bug-workaround.js"></script>
-
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="./assets/js/ie-emulation-modes-warning.js"></script>
+    <script src="./assets/vendor/dist/js/bootstrap.min.js"></script>
+    <script src="./assets/vendor/assets/js/vendor/holder.js"></script>
+    <script src="./assets/vendor/assets/js/ie10-viewport-bug-workaround.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -34,8 +30,8 @@
     <script src="https://unpkg.com/whatwg-fetch@2.0.4/fetch.js"></script>
 
     <!-- Custom styles for this template -->
-    <link href="./carousel.css" rel="stylesheet">
-    <link href="./style.css" rel="stylesheet">
+    <link href="./assets/vendor/carousel.css" rel="stylesheet">
+    <link href="./assets/wwawing/style.css" rel="stylesheet">
 
    <script>
       $(document).ready( function() {
@@ -105,7 +101,7 @@
                 <span class="icon-bar"></span>
               </button>
           <a class="navbar-brand" href="./">
-              <img src="./wwawing-disp.png" alt="WWA Wing">
+              <img src="./assets/wwawing/wwawing-disp.png" alt="WWA Wing">
               <span class="version-wwa" id="version-wwa-nav"><span>
           </a>
             </div>
@@ -137,7 +133,7 @@
         <li data-target="#myCarousel" data-slide-to="2"></li>
       </ol>
       <div class="carousel-inner" role="listbox">
-        <div class="item active" style="background-image: url(firstBG.jpg)">
+        <div class="item active" style="background-image: url(./assets/wwawing/firstBG.jpg)">
         <!--          <img class="first-slide" alt="First slide"> -->
           <div class="container">
             <div class="carousel-caption">
@@ -153,7 +149,7 @@
           </div>
         </div>
         <div class="item">
-          <img class="second-slide" src="secondBG.jpg" alt="Second slide">
+          <img class="second-slide" src="./assets/wwawing/secondBG.jpg" alt="Second slide">
           <div class="container">
             <div class="carousel-caption">
               <h1>わずらわしい警告も、面倒な操作もありません。</h1>
@@ -165,7 +161,7 @@
           </div>
         </div>
         <div class="item">
-          <img class="third-slide" src="tb.jpg"  alt="Third slide">
+          <img class="third-slide" src="./assets/wwawing/tb.jpg"  alt="Third slide">
           <div class="container">
             <div class="carousel-caption">
               <h1>好きな時に、好きな端末で遊ぶことができます。</h1>
@@ -193,20 +189,20 @@
     <div class="container marketing">
       <div class="row">
         <div class="col-lg-4">
-          <img class="img-circle" src="cross.gif" alt="Generic placeholder image" width="140" height="140">
+          <img class="img-circle" src="./assets/wwawing/cross.gif" alt="Generic placeholder image" width="140" height="140">
           <h2>どこでも動く!</h2>
           <p>WWA Wingは、(IE 9以下を除く)最近のほとんどのブラウザで動作します。
       PCだけではなく、スマートフォンやタブレットでも動作します。（スマートフォンやタブレットでは音楽の再生がされない場合があります。）</p>
           <p><a class="btn btn-default go-to-examples" href="#" role="button">サンプルをプレイする &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle" src="old.gif" alt="Generic placeholder image" width="140" height="140">
+          <img class="img-circle" src="./assets/wwawing/old.gif" alt="Generic placeholder image" width="140" height="140">
           <h2>昔のWWAも!</h2>
           <p>WWA Phoenixを使えば、サイト管理者がWWA Wingに対応させていないWWAも遊べるようになります。（マップデータバージョン3以降に限ります。また、効果音再生などに一部制限があります。）</p>
           <p><a class="btn btn-default" href="./wwap/" role="button">WWA Phoenixについて詳しく &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle" src="dev.gif" alt="Generic placeholder image" width="140" height="140">
+          <img class="img-circle" src="./assets/wwawing/dev.gif" alt="Generic placeholder image" width="140" height="140">
           <h2>開発にご協力を!</h2>
           <p>WWA Wingは、GitHub上でソースコード(TypeScript)を公開しています。また、
       また、開発中のβ版をプレイすることができます。不具合の報告や新機能追加などの要望をお待ちしております。皆様、是非開発にご協力ください！</p>
@@ -249,13 +245,6 @@
           <div class="col-md-6">
               <h2>WWA Wing ができるまで</h2>
               <p><a class="btn btn-default btn-primary" href="http://old-experiments.wwawing.com/" role="button">WWA Wing ができるまでを見る &raquo;</a></p>
-
-<!--
-              <h2>関連プロジェクト</h2>
-              <ul>
-                  <li><a href="http://iniivgnip.github.io/">WWACav</a> (<a href="https://github.com/iniivgnip/wwacav">Github repository</a>) - WWAマップ作成ツールのWeb上への移植プロジェクト</li>
-              </ul>
--->
               <h2>使用ライブラリ</h2>
               <ul>
                   <li><a href="https://github.com/brix/crypto-js">CryptoJS</a>(<a href="https://github.com/brix/crypto-js/blob/develop/LICENSE">ライセンス情報</a>)</li>
@@ -290,7 +279,7 @@
     <p><div class="fb-like" data-href="http://wwawing.com" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div></p>
           <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
     <p>
-      <a rel="license" href="http://wwawing.com/wing/LICENSE"><img alt="licensed under MIT License (Expat)" src="./License_icon-mit-88x31.png"></a><br>
+      <a rel="license" href="http://wwawing.com/wing/LICENSE"><img alt="licensed under MIT License (Expat)" src="./assets/vendor/License_icon-mit-88x31.png"></a><br>
       <a href="https://github.com/WWAWing/WWAWing">WWA Wing</a>および<a href="https://github.com/WWAWing/WWALoader">WWA Loader</a>のソースコードは<a href="http://wwawing.com/wing/LICENSE">MIT License (Expat)</a>（<a href="http://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license">日本語参考訳</a>）の下でご利用になれます。
     </p>
     <p>
