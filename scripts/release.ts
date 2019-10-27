@@ -4,7 +4,7 @@ import * as path from "path";
 import * as packageJson from "../package.json";
 
 const srcDir = "output";
-const destDir = "docs";
+const destDir = "get.wwawing.com";
 const releasesJson = path.join(".", "releases.json");
 
 function appendVersionToList(version: string) {
