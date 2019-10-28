@@ -25,7 +25,6 @@ function deployRelease(version: string) {
     copy("wwawing-update.zip", `wwawing-update-latest.zip`)
 }
 
-// TODO: 配布バージョンがエンジンパージョン依存じゃなくなる時がいずれくるので、その時は考える
-const version = "v" + packageJson.devDependencies["@wwawing/engine"];
+const version = "v" + packageJson.devDependencies["@wwawing/all"];
 deployRelease(version);
 appendVersionToList(version);
