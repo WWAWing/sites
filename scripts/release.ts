@@ -1,10 +1,10 @@
 import * as releases from "../releases.json";
 import * as fs from "fs";
 import * as path from "path";
-import * as packageJson from "../package.json";
+import { version } from "@wwawing/all/package.json";
 
 const srcDir = "output";
-const destDir = path.join(".", "wwawing.com", "downloads");
+const destDir = "get.wwawing.com";
 const releasesJson = path.join(".", "releases.json");
 
 function appendVersionToList(version: string) {
@@ -19,12 +19,11 @@ function copy(srcFileName: string, destFileName: string) {
 }
 
 function deployRelease(version: string) {
-    copy("wwawing-dist.zip", `wwawing-dist-${version}.zip`)
+    copy("wwawing-dist.zip", `wwawing-dist-v${version}.zip`)
     copy("wwawing-dist.zip", `wwawing-dist-latest.zip`)
-    copy("wwawing-update.zip", `wwawing-update-${version}.zip`)
+    copy("wwawing-update.zip", `wwawing-update-v${version}.zip`)
     copy("wwawing-update.zip", `wwawing-update-latest.zip`)
 }
 
-const version = "v" + packageJson.devDependencies["@wwawing/all"];
 deployRelease(version);
 appendVersionToList(version);

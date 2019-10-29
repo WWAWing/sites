@@ -10,7 +10,8 @@
     "release": "ts-node ./scripts/release && ts-node ./scripts/generate-download-page",
     "clean": "npm run clean:dist",
     "clean:dist": "shx rm -rf ./scripts/zip-compressor/output",
-    "check-released": "ts-node scripts/check-latest-version-released"
+    "check-released": "ts-node ./scripts/check-latest-version-released",
+    "print-version": "ts-node ./scripts/print-version"
   },
   "repository": {
     "type": "git",
