@@ -8,7 +8,7 @@ if [ $? -eq 1 ]; then
     WWA_WING_VERSION=$(npm run print-version --silent)
     echo "{\"version\":\"$WWA_WING_VERSION\"}" > ./wwawing.com/latest-version.json 
     git add -A
-    git commit -m "RELEASED WWA Wing v$WWA_WING_VERSION"
+    git commit -m "[skip travis] RELEASED WWA Wing v$WWA_WING_VERSION"
     if [ $? -eq 0 ]; then
       git push origin $TRAVIS_BRANCH
     fi
