@@ -10,7 +10,7 @@ FQDN がディレクトリ名と対応しています。
 | get.wwawing.com       | 配布ページ |
 
 ## CI類
-- dependabot: `@wwawing/all` の新しいバージョンがpublishされた時に、そのバージョンをリリースするPull Requestを作成する。（準備中）
+- dependabot: `@wwawing/all` などの依存パッケージの新しいバージョンがpublishされた時に、そのバージョンをリリースするPull Requestを作成する。
 - travis-ci.com: masterブランチに新しいコミットが生成された時, 依存している `@wwawing/all` のバージョンがリリースされてない時に動く。配布物(完全版, 更新版)のZIPを生成する。生成されたZIPは get.wwawing.com 内に配置され、masterブランチにcommit+pushされる。
 - netlify: masterブランチに新しいコミットが生成された時, 依存している　`@wwawing/all` のバージョンが既にリリースされている場合に動く。サイトをデプロイする。（準備中 現在はすべてのコミットに対して生成している）
 
