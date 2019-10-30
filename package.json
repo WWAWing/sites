@@ -1,0 +1,42 @@
+{
+  "name": "@wwawing/sites",
+  "version": "0.0.0",
+  "description": "WWA Wing Release Pages",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "start": "run-s make-dist release",
+    "make-dist": "npm run clean:dist && ts-node ./scripts/make-wwawing-dist && ts-node ./scripts/make-zip",
+    "release": "ts-node ./scripts/release && ts-node ./scripts/generate-download-page",
+    "clean": "npm run clean:dist",
+    "clean:dist": "shx rm -rf ./scripts/zip-compressor/output",
+    "check-released": "ts-node ./scripts/check-latest-version-released",
+    "print-version": "ts-node ./scripts/print-version"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WWAWing/get.wwawing.com.git"
+  },
+  "author": "WWA Wing Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/WWAWing/get.wwawing.com/issues"
+  },
+  "homepage": "https://github.com/WWAWing/get.wwawing.com#readme",
+  "devDependencies": {
+    "@types/jszip": "^3.1.6",
+    "@types/node": "^12.12.0",
+    "@types/pug": "^2.0.4",
+    "@types/shelljs": "^0.8.5",
+    "@wwawing/all": "v3.2.3-pre.2",
+    "glob": "^7.1.4",
+    "jszip": "^3.2.2",
+    "lerna": "^3.15.0",
+    "npm-run-all": "^4.1.5",
+    "pug": "^2.0.4",
+    "shelljs": "^0.8.3",
+    "shx": "^0.3.2",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.6.4"
+  }
+}

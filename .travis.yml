@@ -1,0 +1,20 @@
+language: node_js
+node_js:
+  - '12'
+branches:
+  only:
+    - merge-get-wwawing-com
+env:
+  global:
+    - GIT_COMMITTER_NAME="Matsuyuki (bot)"
+    - GIT_COMMITTER_EMAIL="matsuyuki.eca@gmail.com"
+    - GIT_AUTHOR_NAME="Matsuyuki (bot)"
+    - GIT_AUTHOR_EMAIL="matsuyuki.eca@gmail.com"
+    - secure: BsSEs3gVTAPm7J9vgBCuN9GTCxXICDE5gNjGYeOUuFLS6TOuS5+UynctDfdNoeMhgO3LRv0+bhBhbHQt/h9edjqN+HEzfZkEDMVfAj3AcEr4reNY6XVuF68jEFvfJGT217CyAdtg6UstzMdZg8T41PAmuK+kN81P5qmehdndp03vky9uSSFkN84ZArVcK5atDk3cG7BAN4DfOXsJOM3PQgMvuBrrNMYZRwTdpEt+QLfelxL53RnzOcyKzmUKnumMWIh38xXLcOPEuOMVqpONIvgmWl9CZ80+C+TkIdGCsmeY2M73Q97cTMax1NHpA6kswld9GvLlIyDIXB+ITEy3iPaqPdXMfbcKnae2f4VOJPQYP3OIDVt7mJs/uEYFldgf3b6IkRnvAbb401TUu6GjeV1PlzUgD/7tvWltlaONQoRCzD3Him9LPakh1zo0PNlMbAUMsgGE9pSkytKbbFuxR7ApX/5JT5OBT7CsXLO1H708jQUBuH8J6PD0C3VcZ9EUwNUM1Tmdp86+zKn+2Bp3NE/ECcoRhWFk3wuSYALh8tv8W4nrBw7jGAtwOjYJuTswKbSVbHDtB6AvVzi3Y29d/VMZMBqlB8YZDqsZSdp4C/zg9YB8jnOff/PbIwrZqnl38T52Acuwtng16rctpXqx3i9B/d8LK/P+OO+vH1pPYZg=
+before_install:
+  - openssl aes-256-cbc -K $encrypted_de09abb86ac2_key -iv $encrypted_de09abb86ac2_iv -in keys/id_wwa_deploy.enc -out ~/.ssh/id_wwa_deploy -d
+  - chmod 0600 ~/.ssh/id_wwa_deploy
+  - git remote set-url origin git@github.com:WWAWing/sites.git
+  - echo -e "Host github.com\n\tStrictHostKeyChecking no\n\tIdentityFile ~/.ssh/id_wwa_deploy\n" >> ~/.ssh/config
+script:
+  - ./scripts/travis-release.sh
