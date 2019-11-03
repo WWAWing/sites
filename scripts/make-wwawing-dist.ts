@@ -45,7 +45,7 @@ async function makeDistribution(
             copy("engine", path.join("lib", "wwa.js")),
             copy("loader", path.join("lib", "wwaload.js")),
             copy("assets", path.join("style", "*.css")),
-            copy("style", path.join("output","*.css"))
+            copy("styles", path.join("output","*.css"))
         ];
     } else {
         tasks = [
