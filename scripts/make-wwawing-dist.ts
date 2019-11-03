@@ -44,7 +44,8 @@ async function makeDistribution(
             copy("assets", path.join("html", "manual.html")),
             copy("engine", path.join("lib", "wwa.js")),
             copy("loader", path.join("lib", "wwaload.js")),
-            copy("assets", path.join("style", "*.css"))
+            copy("assets", path.join("style", "*.css")),
+            copy("styles", path.join("output","*.css"))
         ];
     } else {
         tasks = [
@@ -60,7 +61,8 @@ async function makeDistribution(
             copy("assets", path.join("images", "*.gif"), "mapdata"),
             copy("assets", path.join("images", "wwawing-disp.png"), "mapdata"),
             copy("assets", path.join("html", "dist", "*.html"), "mapdata"),
-            copy("debug-server", path.join("bin", "wwa-server.exe"), "mapdata")
+            copy("debug-server", path.join("bin", "wwa-server.exe"), "mapdata"),
+            copy("styles", path.join("output","*.css"), "mapdata")
         ];
     }
     await Promise.all(tasks);

@@ -9,7 +9,7 @@
     "make-dist": "npm run clean:dist && ts-node ./scripts/make-wwawing-dist && ts-node ./scripts/make-zip",
     "release": "ts-node ./scripts/release && ts-node ./scripts/generate-download-page",
     "clean": "npm run clean:dist",
-    "clean:dist": "shx rm -rf ./scripts/zip-compressor/output",
+    "clean:dist": "shx rm -rf ./output",
     "check-released": "ts-node ./scripts/check-latest-version-released",
     "print-version": "ts-node ./scripts/print-version"
   },
@@ -28,7 +28,7 @@
     "@types/node": "^12.12.5",
     "@types/pug": "^2.0.4",
     "@types/shelljs": "^0.8.6",
-    "@wwawing/all": "v3.2.3",
+    "@wwawing/all": "3.2.4",
     "glob": "^7.1.5",
     "jszip": "^3.2.2",
     "lerna": "^3.18.3",
