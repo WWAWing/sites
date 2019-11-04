@@ -13,6 +13,7 @@ if [ -n "$TRAVIS" ];  then
 fi
 
 if [ -n "$NETLIFY" ]; then 
+  npm run fill-version
   if [ -z $PULL_REQUEST -o "$PULL_REQUEST" = false ]; then
     echo "[netlify master branch deploy] skip deploying new version."
     exit 0
@@ -30,7 +31,6 @@ fi
 
 npm start
 WWA_WING_VERSION=$(npm run print-version --silent)
-npm run fill-version
 cp -R ./output/wwawing-update/*.* ./wwawing.com/wing
 
 if [ $IS_PREVIEW -eq 1 ]; then
