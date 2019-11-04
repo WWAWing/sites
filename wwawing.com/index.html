@@ -24,11 +24,6 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <!-- es6-promise (c) 2014 Yehuda Katz, Tom Dale, Stefan Penner and contributors (Conversion to ES6 API by Jake Archibald) MIT License-->
-    <script src="https://unpkg.com/es6-promise@4.2.4/dist/es6-promise.js"></script>
-    <!-- whatwg-fetch Copyright (c) 2014-2016 GitHub, Inc. MIT License-->
-    <script src="https://unpkg.com/whatwg-fetch@2.0.4/fetch.js"></script>
-
     <!-- Custom styles for this template -->
     <link href="./assets/vendor/carousel.css" rel="stylesheet">
     <link href="./assets/wwawing/style.css" rel="stylesheet">
@@ -61,16 +56,6 @@
 
           return false;
         } );
-        fetch("https://wwawing.com/latest-version.json?date=" + Date.now())
-          .then(function(response) {
-            return response.json();
-          })
-          .then(function(data){
-            $("#version-wwa-nav").text("v"+data.version);
-          })
-          .catch(function(err) {
-            console.log(err);
-          })
       });
 
     </script>
@@ -102,7 +87,7 @@
               </button>
           <a class="navbar-brand" href="./">
               <img src="./assets/wwawing/wwawing-disp.png" alt="WWA Wing">
-              <span class="version-wwa" id="version-wwa-nav"><span>
+              <span class="version-wwa" id="version-wwa-nav">{{ ##FILL_LATEST_VERSION## }}<span>
           </a>
             </div>
         <div id="navbar" class="navbar-collapse collapse">

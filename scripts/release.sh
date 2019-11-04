@@ -30,7 +30,7 @@ fi
 
 npm start
 WWA_WING_VERSION=$(npm run print-version --silent)
-echo "{\"version\":\"$WWA_WING_VERSION\"}" > ./wwawing.com/latest-version.json 
+npm run fill-version
 cp -R ./output/wwawing-update/*.* ./wwawing.com/wing
 
 if [ $IS_PREVIEW -eq 1 ]; then
