@@ -17,4 +17,4 @@ before_install:
   - git remote set-url origin git@github.com:WWAWing/sites.git
   - echo -e "Host github.com\n\tStrictHostKeyChecking no\n\tIdentityFile ~/.ssh/id_wwa_deploy\n" >> ~/.ssh/config
 script:
-  - ./scripts/travis-release.sh
+  - ./scripts/release.sh
