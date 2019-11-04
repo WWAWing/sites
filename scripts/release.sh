@@ -5,6 +5,8 @@
 # - netlify の master ブランチへのコミット時 -> 何もしない
 # - netlify の Pull Request のプレビュー生成時 -> 配布物生成 (-> netlify にデプロイ) 
 
+IS_PREVIEW=0
+
 if [ -n "$TRAVIS" ];  then
   RELEASE_BRANCH=$TRAVIS_BRANCH
   git checkout $RELEASE_BRANCH
@@ -12,17 +14,17 @@ fi
 
 if [ -n "$NETLIFY" ]; then 
   if [ -z $PULL_REQUEST -o "$PULL_REQUEST" = false ]; then
-    echo "nothing to deploy."
+    echo "[netlify master branch deploy] skip deploying new version."
     exit 0
   fi
-  echo "[preview mode]"
+  echo "[netlify PR preview deploy] preview mode"
   IS_PREVIEW=1
 fi
 
 npm run check-released --silent
 
 if [ $? -eq 0 ]; then
-  echo "nothing to release."
+  echo "[up to date] nothing to release."
   exit 0
 fi
 
@@ -31,7 +33,7 @@ WWA_WING_VERSION=$(npm run print-version --silent)
 echo "{\"version\":\"$WWA_WING_VERSION\"}" > ./wwawing.com/latest-version.json 
 cp -R ./output/wwawing-update/*.* ./wwawing.com/wing
 
-if $IS_PREVIEW; then
+if [ $IS_PREVIEW -eq 1 ]; then
   exit 0
 fi
 
