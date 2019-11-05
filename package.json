@@ -11,7 +11,8 @@
     "clean": "npm run clean:dist",
     "clean:dist": "shx rm -rf ./output",
     "check-released": "ts-node ./scripts/check-latest-version-released",
-    "print-version": "ts-node ./scripts/print-version"
+    "print-version": "ts-node ./scripts/print-version",
+    "fill-version": "ts-node ./scripts/fill-version-in-top-page"
   },
   "repository": {
     "type": "git",
@@ -24,11 +25,13 @@
   },
   "homepage": "https://github.com/WWAWing/sites#readme",
   "devDependencies": {
+    "@types/escape-html": "0.0.20",
     "@types/jszip": "^3.1.6",
     "@types/node": "^12.12.5",
     "@types/pug": "^2.0.4",
     "@types/shelljs": "^0.8.6",
     "@wwawing/all": "3.2.4",
+    "escape-html": "^1.0.3",
     "glob": "^7.1.5",
     "jszip": "^3.2.2",
     "lerna": "^3.18.3",
