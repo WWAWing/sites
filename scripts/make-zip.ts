@@ -1,7 +1,7 @@
-import * as JSZip from "jszip";
+import JSZip from "jszip";
+import glob from "glob";
 import * as fs from "fs";
 import * as path from "path";
-import * as glob from "glob";
 
 const baseDir = "./output";
 

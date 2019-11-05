@@ -14,6 +14,10 @@ fi
 
 if [ -n "$NETLIFY" ]; then 
   npm run fill-version
+  if [ $? -eq 1 ]; then
+    echo "fill-version runtime error."
+    exit 1
+  fi
   if [ -z $PULL_REQUEST -o "$PULL_REQUEST" = false ]; then
     echo "[netlify master branch deploy] skip deploying new version."
     exit 0
@@ -30,6 +34,11 @@ if [ $? -eq 0 ]; then
 fi
 
 npm start
+if [ $? -eq 1 ]; then
+  echo "build error."
+  exit 1
+fi
+
 WWA_WING_VERSION=$(npm run print-version --silent)
 cp -R ./output/wwawing-update/*.* ./wwawing.com/wing
 
