@@ -3,7 +3,7 @@ import * as fs from "fs";
 import * as path from "path";
 import { version } from "@wwawing/all/package.json";
 
-const srcDir = "output";
+const srcDir = "./node_modules/@wwawing/all/dist";
 const destDir = "get.wwawing.com";
 const releasesJson = path.join(".", "releases.json");
 

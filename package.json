@@ -5,8 +5,8 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "start": "run-s make-dist release",
-    "make-dist": "npm run clean:dist && ts-node ./scripts/make-wwawing-dist && ts-node ./scripts/make-zip",
+    "start": "npm run release",
+    "make-dist": "npm run clean:dist && ts-node ./scripts/make-zip",
     "release": "ts-node ./scripts/release && ts-node ./scripts/generate-download-page",
     "clean": "npm run clean:dist",
     "clean:dist": "shx rm -rf ./output",
