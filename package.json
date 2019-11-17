@@ -30,7 +30,7 @@
     "@types/node": "^12.12.8",
     "@types/pug": "^2.0.4",
     "@types/shelljs": "^0.8.6",
-    "@wwawing/all": "3.2.4",
+    "@wwawing/all": "3.2.5",
     "escape-html": "^1.0.3",
     "glob": "^7.1.6",
     "jszip": "^3.2.2",
