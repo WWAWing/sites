@@ -40,7 +40,12 @@ if [ $? -eq 1 ]; then
 fi
 
 WWA_WING_VERSION=$(npm run print-version --silent)
-cp -R ./output/wwawing-update/*.* ./wwawing.com/wing
+cp -R ./node_modules/@wwawing/all/dist/wwawing-update/*.* ./wwawing.com/wing
+
+if [ $? -ne 0 ]; then
+  echo "failed to update wwawing example."
+  exit 1
+fi
 
 if [ $IS_PREVIEW -eq 1 ]; then
   exit 0
