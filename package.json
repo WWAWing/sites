@@ -26,7 +26,7 @@
   "homepage": "https://github.com/WWAWing/sites#readme",
   "devDependencies": {
     "@types/escape-html": "0.0.20",
-    "@types/jszip": "^3.1.6",
+    "@types/jszip": "^3.1.7",
     "@types/node": "^12.12.19",
     "@types/pug": "^2.0.4",
     "@types/shelljs": "^0.8.6",
