@@ -1,289 +1,356 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="WWA Wingは, ゲーム作成ツール「WWA」をさらに進化させるためのプロジェクトです。最近のブラウザでも動きます。">
-    <meta name="author" content="WWA Wing Team">
-    <link rel="shortcut icon" href="./assets/wwawing/favicon.ico">
 
-    <title>WWA Wing</title>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="WWA Wingは, ゲーム作成ツール「WWA」をさらに進化させるためのプロジェクトです。最近のブラウザでも動きます。">
+  <meta name="author" content="WWA Wing Team">
+  <link rel="shortcut icon" href="./assets/wwawing/favicon.ico">
 
-    <!-- Bootstrap core CSS -->
-    <link href="./assets/vendor/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="./assets/vendor/dist/js/bootstrap.min.js"></script>
-    <script src="./assets/vendor/assets/js/vendor/holder.js"></script>
-    <script src="./assets/vendor/assets/js/ie10-viewport-bug-workaround.js"></script>
+  <title>WWA Wing</title>
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
+  <!-- Bootstrap core CSS -->
+  <link href="./assets/vendor/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="./assets/vendor/dist/js/bootstrap.min.js"></script>
+  <script src="./assets/vendor/assets/js/vendor/holder.js"></script>
+  <script src="./assets/vendor/assets/js/ie10-viewport-bug-workaround.js"></script>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <!-- Custom styles for this template -->
-    <link href="./assets/vendor/carousel.css" rel="stylesheet">
-    <link href="./assets/wwawing/style.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="./assets/vendor/carousel.css" rel="stylesheet">
+  <link href="./assets/wwawing/style.css" rel="stylesheet">
 
-   <script>
-      $(document).ready( function() {
-        var btn = $(".back-to-top-button");
-        var goToExamples = $(".go-to-examples");
-        var page = $("body, html");
-        var examples = $("#wwa-examples");
-        $(window).scroll( function() {
-          if( $(this).scrollTop() > 150 ) {
-            btn.fadeIn();
-          } else {
-            btn.fadeOut();
-          }
-        } );
-        btn.click( function() {
-          page.animate(
-              {
-                scrollTop: 0
-              }, 500 );
-          return false;
-        } );
-        goToExamples.click( function() {
-          page.animate(
-              {
-                scrollTop: examples.offset().top
-              }, 500 );
-
-          return false;
-        } );
+  <script>
+    $(document).ready(function () {
+      var btn = $(".back-to-top-button");
+      var goToExamples = $(".go-to-examples");
+      var page = $("body, html");
+      var examples = $("#wwa-examples");
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 150) {
+          btn.fadeIn();
+        } else {
+          btn.fadeOut();
+        }
       });
+      btn.click(function () {
+        page.animate(
+          {
+            scrollTop: 0
+          }, 500);
+        return false;
+      });
+      goToExamples.click(function () {
+        page.animate(
+          {
+            scrollTop: examples.offset().top
+          }, 500);
 
-    </script>
-  </head>
+        return false;
+      });
+    });
+
+  </script>
+</head>
 <!-- NAVBAR
 ================================================== -->
-  <body>
+
+<body>
   <!--FB-->
   <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/ja_KS/sdk.js#xfbml=1&version=v2.3";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+  <script>(function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/ja_KS/sdk.js#xfbml=1&version=v2.3";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
   <!--/FB-->
-    <div class="navbar-wrapper">
-      <div class="container">
+  <div class="navbar-wrapper">
+    <div class="container">
 
-        <nav class="navbar navbar-wwawing">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-          <a class="navbar-brand" href="./">
+      <nav class="navbar navbar-wwawing">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+              aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="./">
               <img src="./assets/wwawing/wwawing-disp.png" alt="WWA Wing">
               <span class="version-wwa" id="version-wwa-nav">{{ ##FILL_LATEST_VERSION## }}<span>
-          </a>
-            </div>
-        <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-        <li><a href="https://get.wwawing.com/wwawing-dist-latest.zip" class="dl-wwa" role="button"><span class="glyphicon glyphicon-download-alt"></span> 完全版</a></li>
-        <li><a href="https://get.wwawing.com/wwawing-update-latest.zip" class="dl-wwa" role="button"><span class="glyphicon glyphicon-download-alt"></span> 更新版</a></li>
-        <li><a href="./wing/manual.html" class="dl-wwa" role="button"><span class="glyphicon glyphicon-book"></span> マニュアル</a></li>
-        <li><a href="./wwap" class="dl-wwa" role="button"><span class="glyphicon glyphicon-file"></span> Phoenix</a></li>
-        <li><a href="http://jbbs.shitaraba.net/netgame/14732/" class="report-bug-wwa" role="button"><span class="glyphicon glyphicon-exclamation-sign"></span> 不具合報告</a></li>
-        <li><a href="#" class="other-wwa go-to-examples" role="button"><span class="glyphicon glyphicon-play-circle"></span>  サンプル</a></li>
-        <li><a href="http://wwafansq.com/" class="btn-eratta" role="button"><i class="glyphicon glyphicon-user"></i> FanSquare</a></li>
-	<li><a href="http://discord.gg/ScdfKaN" class="btn-eratta" role="button"><i class="glyphicon glyphicon-comment"></i> Discord</a></li>
-        </ul>
+            </a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="https://get.wwawing.com/wwawing-dist-latest.zip" class="dl-wwa" role="button"><span
+                    class="glyphicon glyphicon-download-alt"></span> 完全版</a></li>
+              <li><a href="https://get.wwawing.com/wwawing-update-latest.zip" class="dl-wwa" role="button"><span
+                    class="glyphicon glyphicon-download-alt"></span> 更新版</a></li>
+              <li><a href="./wing/manual.html" class="dl-wwa" role="button"><span
+                    class="glyphicon glyphicon-book"></span> マニュアル</a></li>
+              <li><a href="./wwap" class="dl-wwa" role="button"><span class="glyphicon glyphicon-file"></span>
+                  Phoenix</a></li>
+              <li><a href="http://jbbs.shitaraba.net/netgame/14732/" class="report-bug-wwa" role="button"><span
+                    class="glyphicon glyphicon-exclamation-sign"></span> 不具合報告</a></li>
+              <li><a href="#" class="other-wwa go-to-examples" role="button"><span
+                    class="glyphicon glyphicon-play-circle"></span> サンプル</a></li>
+            </ul>
+          </div>
         </div>
+      </nav>
+
     </div>
-        </nav>
-
-      </div>
-    </div>
+  </div>
 
 
-    <!-- Carousel
+  <!-- Carousel
     ================================================== -->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner" role="listbox">
-        <div class="item active" style="background-image: url(./assets/wwawing/firstBG.jpg)">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+      <div class="item active" style="background-image: url(./assets/wwawing/firstBG.jpg)">
         <!--          <img class="first-slide" alt="First slide"> -->
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Welcome to WWA Wing!</h1>
-          <p>WWA(World Wide Adventure)は、ブラウザで遊べるインターネットRPGです。あなたも広大な世界をを旅してみませんか？</p>
-          <p>(当サイトは, WWAを2015年に新しい技術でリメイクした非公式プロジェクトです。)</p>
-              <p>
-          <a href="http://wwajp.com/top.html" class="btn btn-primary" role="button"><i class="glyphicon glyphicon glyphicon-question-sign"></i> WWAとは (WWA公式)</a>
-          <a href="https://get.wwawing.com/wwawing-dist-latest.zip" class="btn  btn-success" role="button"><i class="glyphicon glyphicon-download-alt"></i> 開発ツール完全版</a>
-          <a href="https://get.wwawing.com/wwawing-update-latest.zip" class="btn  btn-success" role="button"><i class="glyphicon glyphicon-download-alt"></i> 最新版への更新ファイル</a>
-          </p>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <img class="second-slide" src="./assets/wwawing/secondBG.jpg" alt="Second slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>わずらわしい警告も、面倒な操作もありません。</h1>
-          <p>WWAは、プレイのためにセキュリティ関連の特殊な操作が必要になってしまいました。</p>
-          <p>WWA Wing/Phoenixは、このわずらわしさからあなたを解放します。</p>
-              <p><a class="btn btn-lg btn-primary" href="./wwap" role="button"><i class="glyphicon glyphicon-file"></i> 既存のWWAも遊ぶ</a>
-              <a class="btn btn-lg btn-primary go-to-examples" href="#" role="button"><i class="glyphicon glyphicon-play-circle"></i> サンプルマップ</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <img class="third-slide" src="./assets/wwawing/tb.jpg"  alt="Third slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>好きな時に、好きな端末で遊ぶことができます。</h1>
-          <p>PCでも、タブレットでも、スマートフォンでも。</p>
-          <p>これまで動かなかった環境でも、WWAがプレイできるようになります。</p>
-            </div>
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Welcome to WWA Wing!</h1>
+            <p>WWA(World Wide Adventure)は、ブラウザで遊べるインターネットRPGです。あなたも広大な世界をを旅してみませんか？</p>
+            <p>(当サイトは, WWAを2015年に新しい技術でリメイクした非公式プロジェクトです。)</p>
+            <p>
+              <a href="http://wwajp.com/top.html" class="btn btn-primary" role="button"><i
+                  class="glyphicon glyphicon glyphicon-question-sign"></i> WWAとは (WWA公式)</a>
+              <a href="https://get.wwawing.com/wwawing-dist-latest.zip" class="btn  btn-success" role="button"><i
+                  class="glyphicon glyphicon-download-alt"></i> 開発ツール完全版</a>
+              <a href="https://get.wwawing.com/wwawing-update-latest.zip" class="btn  btn-success" role="button"><i
+                  class="glyphicon glyphicon-download-alt"></i> 最新版への更新ファイル</a>
+            </p>
           </div>
         </div>
       </div>
-      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div><!-- /.carousel -->
-<!--
+      <div class="item">
+        <img class="second-slide" src="./assets/wwawing/secondBG.jpg" alt="Second slide">
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>わずらわしい警告も、面倒な操作もありません。</h1>
+            <p>WWAは、プレイのためにセキュリティ関連の特殊な操作が必要になってしまいました。</p>
+            <p>WWA Wing/Phoenixは、このわずらわしさからあなたを解放します。</p>
+            <p><a class="btn btn-lg btn-primary" href="./wwap" role="button"><i class="glyphicon glyphicon-file"></i>
+                既存のWWAも遊ぶ</a>
+              <a class="btn btn-lg btn-primary go-to-examples" href="#" role="button"><i
+                  class="glyphicon glyphicon-play-circle"></i> サンプルマップ</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <img class="third-slide" src="./assets/wwawing/tb.jpg" alt="Third slide">
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>好きな時に、好きな端末で遊ぶことができます。</h1>
+            <p>PCでも、タブレットでも、スマートフォンでも。</p>
+            <p>これまで動かなかった環境でも、WWAがプレイできるようになります。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div><!-- /.carousel -->
+  <!--
     <div class="alert alert-danger">
       <span class="glyphicon glyphicon-warning-sign"></span>
       <a href="https://twitter.com/wwa_wing/status/1081755932453818368">2019-01-20頃、サーバ移転を実施するため、このサイトに一時繋がらなくなる可能性があります。この移転作業に伴うURLの変更はありません。</a>
     </div>
 -->
-    <div class="container marketing">
-      <div class="row">
-        <div class="col-lg-4">
-          <img class="img-circle" src="./assets/wwawing/cross.gif" alt="Generic placeholder image" width="140" height="140">
-          <h2>どこでも動く!</h2>
-          <p>WWA Wingは、最近のほとんどのブラウザで動作します。
-             PCだけではなく、スマートフォンやタブレットでも動作します。</p>
-          <p><a class="btn btn-default go-to-examples" href="#" role="button">サンプルをプレイする &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle" src="./assets/wwawing/old.gif" alt="Generic placeholder image" width="140" height="140">
-          <h2>昔のWWAも!</h2>
-          <p>WWA Phoenixを使えば、10年以上前に作られたJava版のWWAも遊べるようになります。（効果音再生などに一部制限があります。）</p>
-          <p><a class="btn btn-default" href="./wwap/" role="button">WWA Phoenixについて詳しく &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle" src="./assets/wwawing/dev.gif" alt="Generic placeholder image" width="140" height="140">
-          <h2>開発にご協力を!</h2>
-          <p>WWA Wingは、GitHub上でソースコード(TypeScript)を公開しています。不具合の報告や新機能追加などの要望をお待ちしております。皆様、是非開発にご協力ください！</p>
-          <p><a class="btn btn-default" href="https://github.com/WWAWing" role="button">ソースコード(GitHub) &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-</div><!-- /.row -->
-<div class="row">
-    <div class="col-md-6">
+  <div class="container marketing">
+    <div class="row">
+      <div class="col-lg-4">
+        <img class="img-circle" src="./assets/wwawing/cross.gif" alt="Generic placeholder image" width="140"
+          height="140">
+        <h2>どこでも動く!</h2>
+        <p>WWA Wingは、最近のほとんどのブラウザで動作します。
+          PCだけではなく、スマートフォンやタブレットでも動作します。</p>
+        <p><a class="btn btn-default go-to-examples" href="#" role="button">サンプルをプレイする &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <img class="img-circle" src="./assets/wwawing/old.gif" alt="Generic placeholder image" width="140" height="140">
+        <h2>昔のWWAも!</h2>
+        <p>WWA Phoenixを使えば、10年以上前に作られたJava版のWWAも遊べるようになります。（効果音再生などに一部制限があります。）</p>
+        <p><a class="btn btn-default" href="./wwap/" role="button">WWA Phoenixについて詳しく &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <img class="img-circle" src="./assets/wwawing/dev.gif" alt="Generic placeholder image" width="140" height="140">
+        <h2>開発にご協力を!</h2>
+        <p>WWA Wingは、GitHub上でソースコード(TypeScript)を公開しています。不具合の報告や新機能追加などの要望をお待ちしております。皆様、是非開発にご協力ください！</p>
+        <p><a class="btn btn-default" href="https://github.com/WWAWing" role="button">ソースコード(GitHub) &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+    <div class="row">
+      <div class="col-md-6">
         <div class="page-header">
-            <h1 id="wwa-examples">サンプル</h1>
+          <h1 id="wwa-examples">サンプル・マニュアル</h1>
         </div>
         <h2>WWA(原作)のサンプル</h2>
         <ul>
-            <li><a href="./wing/wwamap.html">Standard Map</a>(WWA Wing対応アレンジ版)</li>
-            <li><a href="./wing/island02.html">Fantasy Island</a>(<em>BGM音量注意</em>)</li>
-            <li><a href="./wing/caves01.html">Cave Dungeon I</a>(<em>BGM音量注意</em>)</li>
-            <li><a href="./wing/caves02.html">Cave Dungeon II</a>(<em>BGM音量注意</em>)</li>
+          <li><a href="./wing/wwamap.html">Standard Map</a>(WWA Wing対応アレンジ版)</li>
+          <li><a href="./wing/island02.html">Fantasy Island</a>(<em>BGM音量注意</em>)</li>
+          <li><a href="./wing/caves01.html">Cave Dungeon I</a>(<em>BGM音量注意</em>)</li>
+          <li><a href="./wing/caves02.html">Cave Dungeon II</a>(<em>BGM音量注意</em>)</li>
         </ul>
-        <a class="btn btn-default" href="https://info.wwawing.com/wing/" role="button">WWA Wing Team のWWA &raquo;</a></p>
+        <a class="btn btn-default" href="https://info.wwawing.com/wing/" role="button">WWA Wing Team のWWA &raquo;</a>
+        </p>
+
+        <h2>マニュアル</h2>
+        <a class="btn btn-success" href="./wing/manual.html" role="button">最新版のマニュアルを見る &raquo;</a>
 
         <h2>WWASAVE.js β版</h2>
         <p>パスワードセーブ永続化の実験台です。</p>
         <a class="btn btn-success" href="http://v.chashitsu.org:8080/client/" role="button">試してみる! &raquo;</a>
-        <a class="btn btn-default" href="https://github.com/WWAWing/WWASAVE.js/" role="button">ソースコード(GitHub) &raquo;</a>
+        <a class="btn btn-default" href="https://github.com/WWAWing/WWASAVE.js/" role="button">ソースコード(GitHub)
+          &raquo;</a>
 
         <h2>旧版</h2>
         <p>古いバージョンをダウンロードすることができます。最新版で不具合が出る場合にご利用ください。バージョン W3.15c以前は通常版のみです。</p>
-        <p><a class="btn btn-default btn-success" href="https://get.wwawing.com/" role="button"> 古いバージョンを見る &raquo;</a></p>
+        <p><a class="btn btn-default btn-success" href="https://get.wwawing.com/" role="button"> 古いバージョンを見る &raquo;</a>
+        </p>
 
-    </div>
+      </div>
       <div class="col-md-6">
-          <div class="page-header">
-        <h1>マニュアル</h1>
-        <a class="btn btn-success" href="./wing/manual.html" role="button">最新版のマニュアルを見る &raquo;</a>
-	      <h1>Twitter</h1>
-          </div>
-	  <a class="twitter-timeline" href="https://twitter.com/wwa_wing" data-widget-id="583802882840924160">@wwa_wingさんのツイート</a>
-	  <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
-          </div>
+       <div class="page-header">
+          <h1>Twitter</h1>
+        </div>
+        <a class="twitter-timeline" href="https://twitter.com/wwa_wing"
+          data-widget-id="583802882840924160">@wwa_wingさんのツイート</a>
+        <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
       </div>
-      <div class="row">
-          <div class="col-md-6">
-              <h2>WWA Wing ができるまで</h2>
-              <p><a class="btn btn-default btn-primary" href="http://old-experiments.wwawing.com/" role="button">WWA Wing ができるまでを見る &raquo;</a></p>
-              <h2>使用ライブラリ</h2>
-              <ul>
-                  <li><a href="https://github.com/brix/crypto-js">CryptoJS</a>(<a href="https://github.com/brix/crypto-js/blob/develop/LICENSE">ライセンス情報</a>)</li>
-              </ul>
-          </div>
-          <div class="col-md-6">
-              <h2>参考リンク</h2>
-              <ul>
-                  <li><a href="http://wwajp.com">キャラバンサークル</a>(WWA原作)</li>
-                  <li><a href="http://wwafansq.com">WWA FanSqure</a>(WWAの広報および関連グッズ制作サークル)</li>
-                  <li><a href="https://wwacontest.aruneko.net/">WWA Contest</a></li>(年に一度のWWAの祭典!)</li>
-                  <li><a href="https://ec.nintendo.com/JP/ja/titles/70010000015161">Nintendo Switch™ 対応ダウンロードソフト 『WWA Collection』</a> (WWA WingがOSSとして使用されています。(<a href="https://www.wwafansq.com/works/wwa_collection/">紹介ページ</a>)</li>
-                  <li><a href="http://plicy.net/">PLiCy</a></li>(WWA Wingのゲームを投稿可能なサイト)</li>
-                  <li><a href="http://www.freem.ne.jp/">ふりーむ！</a>(WWA Wingの投稿を<a href="https://twitter.com/FreemGames/status/1059796575784853505">受け付けている</a>ようです</a>(β)</li>
-                  <li><a href="https://www.freem.ne.jp/contents/create/browser_game_tag_optimizer.html">ふりーむ！投稿用タグ変換器</a>(<a href="https://twitter.com/FreemGames/status/1060082111355355136">使い方</a>)</li>
+    </div>
 
-                  <li><a href="./wwaaa">WWAAA</a>（2015年 エイプリルフールネタ）</li>
-                  <li><a href="./wing-x">WWA-G</a>（2016年 エイプリルフールネタ）</li>
-                  <li><a href="https://matsuyuki.dev/">まつゆき（作者個人サイト）</a></li>
-              </ul>
-
-          </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="page-header">
+          <h1 id="wwa-examples">参考リンク</h1>
+        </div>
       </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <h3>利用実績</h3>
+        <p>Nintendo Switch™ 対応のダウンロードソフトで、<a href="http://plicy.net/">PLiCy</a>さんによる制作です。</p>
+        <ul>
+          <li><a href="https://ec.nintendo.com/JP/ja/titles/70010000015161">『WWA Collection』</a> (<a
+              href="https://www.wwafansq.com/works/wwa_collection/">紹介ページ</a>)</li>
+          <li><a href="https://ec.nintendo.com/JP/ja/titles/70010000018564">『WWA Collection 2』</a> (<a
+              href="https://www.wwafansq.com/works/wwa_collection_2/">紹介ページ</a>)</li>
+        </ul>
+        <h3>使用ライブラリ</h3>
+        <p>WWA Wingで使用しているライブラリです。これらの他、ビルドに多数のOSSを利用しています。</p>
+        <ul>
+          <li><a href="https://github.com/brix/crypto-js">CryptoJS</a>(<a
+              href="https://github.com/brix/crypto-js/blob/develop/LICENSE">ライセンス情報</a>)</li>
+        </ul>
+        <h3>過去のエイプリルフール</h3>
+        <ul>
+          <li><a href="./wwaaa">WWAAA</a>（2015年）</li>
+          <li><a href="./wing-x">WWA-G</a>（2016年）</li>
+        </ul>
+        <h3>WWA Wing ができるまで</h3>
+        <p><a class="btn btn-default btn-primary" href="http://old-experiments.wwawing.com/" role="button">WWA Wing
+            ができるまでを見る &raquo;</a></p>
+      </div>
+      <div class="col-md-6">
+        <h3>WWA公式</h3>
+        <p>WWAの生みの親であるNAOさんのサイトです。</p>
+        <ul>
+          <li><a href="https://wwajp.com">キャラバンサークル</a></li>
+          <li><a href="https://wwajp.com/top.html">World Wide Adventure</a></li>
+        </ul>
+        <h3>WWA FanSquare</h3>
+        <p>WWAのプレイや制作をお手伝いをされているサークルです。年に一度コンテストを開催されています。</p>
+        <ul>
+          <li><a href="https://wwafansq.com">WWA FanSqure</a></li>
+          <li><a href="https://wwacontest.aruneko.net/">WWA Contest</a></li>
+          <li><a href="https://www.wwafansq.com/community/">WWA コミュニティ</a> - Discord上のWWAコミュニティ</li>
+        </ul>
+        <h3>投稿可能なゲームサイト</h3>
+        <p>WWA/WWA Wingで制作された作品を投稿することができるサイトです。個人のサイトにも設置できます。</p>
+        <ul>
+          <li><a href="https://plicy.net/">PLiCy</a></li>(WWA Wingのゲームを投稿可能なサイト)</li>
+          <li><a href="http://www.freem.ne.jp/">ふりーむ！</a>(WWA Wingの投稿を<a
+              href="https://twitter.com/FreemGames/status/1059796575784853505">受け付けている</a>ようです</a>(β)</li>
+          <li><a href="https://www.freem.ne.jp/contents/create/browser_game_tag_optimizer.html">ふりーむ！投稿用タグ変換器</a>(<a
+              href="https://twitter.com/FreemGames/status/1060082111355355136">使い方</a>)</li>
+        </ul>
+        <h3>WWA Wing Team メンバーの個人サイト</h3>
+        <ul>
+          <li><a href="https://matsuyuki.dev/">まつゆき</a></li>
+          <li><a href="https://hirarira.net">ヒラリラーのMP</a></li>
+          <li><a href="https://www.aokashi.net">Aokashi Home</a></li>
+          <li><a href="https://www.aruneko.net">Aruneko的びぼーろく</a></li>
+        </ul>
+      </div>
+    </div>
 
-      <!-- FOOTER -->
-      <footer>
-        <p><!--<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://wwawing.com/" data-via="wwa_wing" data-hashtags="wwawing">Tweet</a>-->
-        <a class="twitter-share-button"
-          href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fwwawing.com%2F"
+    <!-- FOOTER -->
+    <footer>
+      <p>
+        <!--<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://wwawing.com/" data-via="wwa_wing" data-hashtags="wwawing">Tweet</a>-->
+        <a class="twitter-share-button" href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fwwawing.com%2F"
           data-counturl="http://wwawing.com">
           Tweet</a></p>
-    <p><div class="fb-like" data-href="http://wwawing.com" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div></p>
-          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-    <p>
-      <a rel="license" href="http://wwawing.com/wing/LICENSE"><img alt="licensed under MIT License (Expat)" src="./assets/vendor/License_icon-mit-88x31.png"></a><br>
-      <a href="https://github.com/WWAWing/WWAWing">WWA Wing</a>および<a href="https://github.com/WWAWing/WWALoader">WWA Loader</a>のソースコードは<a href="http://wwawing.com/wing/LICENSE">MIT License (Expat)</a>（<a href="http://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license">日本語参考訳</a>）の下でご利用になれます。
-    </p>
-    <p>
-      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="クリエイティブ・コモンズ・ライセンス" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png"></a><br>
-      特に記載がない場合、このページの内容は <a rel="license" href="http://creativecommons.org/licenses/by/4.0/deed.ja">クリエイティブ・コモンズ 表示 4.0 国際 ライセンスの下に提供されています。</a>
-      ただし、WWAの原作からの画像・音声・文書・ソースコードなどの著作物については、一部の著作権が原作者NAO氏に帰属しますので、<a href="http://wwajp.com">WWA公式サイトをご確認ください。</a>
-    </p>
-    <p>このサイトでは、<a href="http://getbootstrap.com/">Bootstrap</a>およびそれに付属する、もしくは参照されるJavaScript・CSS・HTMLライブラリを使用しています。詳しくはHTMLソースをご確認ください。</p>
-    <p>Internet RPG &quot;<a href="http://wwajp.com/">World Wide Adventure</a>&quot; &copy; 1996-2017 NAO</p>
-    <p>&quot;WWA Wing&quot; &copy; 2013-2019 WWA Wing Team</p>
-    <p>Nintendo Switch™ は <a href="https://www.nintendo.co.jp/" target="_blank">任天堂株式会社</a> の商標です。</p>
+      <p>
+        <div class="fb-like" data-href="http://wwawing.com" data-layout="button_count" data-action="like"
+          data-show-faces="true" data-share="true"></div>
+      </p>
+      <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
+      <p>
+        <a rel="license" href="http://wwawing.com/wing/LICENSE"><img alt="licensed under MIT License (Expat)"
+            src="./assets/vendor/License_icon-mit-88x31.png"></a><br>
+        <a href="https://github.com/WWAWing/WWAWing">WWA Wing</a>および<a href="https://github.com/WWAWing/WWALoader">WWA
+          Loader</a>のソースコードは<a href="http://wwawing.com/wing/LICENSE">MIT License (Expat)</a>（<a
+          href="http://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license">日本語参考訳</a>）の下でご利用になれます。
+      </p>
+      <p>
+        <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="クリエイティブ・コモンズ・ライセンス"
+            style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png"></a><br>
+        特に記載がない場合、このページの内容は <a rel="license" href="http://creativecommons.org/licenses/by/4.0/deed.ja">クリエイティブ・コモンズ 表示
+          4.0 国際 ライセンスの下に提供されています。</a>
+        ただし、WWAの原作からの画像・音声・文書・ソースコードなどの著作物については、一部の著作権が原作者NAO氏に帰属しますので、<a href="http://wwajp.com">WWA公式サイトをご確認ください。</a>
+      </p>
+      <p>このサイトでは、<a
+          href="http://getbootstrap.com/">Bootstrap</a>およびそれに付属する、もしくは参照されるJavaScript・CSS・HTMLライブラリを使用しています。詳しくはHTMLソースをご確認ください。
+      </p>
+      <p>Internet RPG &quot;<a href="http://wwajp.com/">World Wide Adventure</a>&quot; &copy; 1996-2017 NAO</p>
+      <p>&quot;WWA Wing&quot; &copy; 2013-2020 WWA Wing Team</p>
+      <p>Nintendo Switch™ は <a href="https://www.nintendo.co.jp/" target="_blank">任天堂株式会社</a> の商標です。</p>
 
-      </footer>
+    </footer>
 
-    </div><!-- /.container -->
+  </div><!-- /.container -->
 
-    <a href="#" class="back-to-top-button">↑</a>
+  <a href="#" class="back-to-top-button">↑</a>
 
-  </body>
+</body>
+
 </html>
