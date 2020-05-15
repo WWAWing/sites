@@ -27,7 +27,7 @@
   "devDependencies": {
     "@types/escape-html": "0.0.20",
     "@types/jszip": "^3.4.1",
-    "@types/node": "^12.12.37",
+    "@types/node": "^12.12.39",
     "@types/pug": "^2.0.4",
     "@types/shelljs": "^0.8.7",
     "@wwawing/all": "3.3.1",
