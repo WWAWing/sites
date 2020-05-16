@@ -1,6 +1,6 @@
-import * as releases from "../releases.json";
-import * as fs from "fs";
-import * as path from "path";
+import releases from "../releases.json";
+import fs from "fs";
+import path from "path";
 import { version } from "@wwawing/all/package.json";
 
 const srcDir = "./node_modules/@wwawing/all/dist";
