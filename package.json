@@ -29,7 +29,7 @@
     "@types/jszip": "^3.4.1",
     "@types/node": "^12.12.39",
     "@types/pug": "^2.0.4",
-    "@types/shelljs": "^0.8.7",
+    "@types/shelljs": "^0.8.8",
     "@wwawing/all": "3.3.1",
     "escape-html": "^1.0.3",
     "glob": "^7.1.6",
