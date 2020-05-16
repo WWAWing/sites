@@ -1,6 +1,6 @@
 import * as releases from "../releases.json";
-import * as pug from "pug";
-import * as fs from "fs";
+import pug from "pug";
+import fs from "fs";
 
 const compile = pug.compileFile("./scripts/index.pug", { pretty: true });
 const html = compile(releases);
