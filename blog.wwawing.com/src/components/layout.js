@@ -80,19 +80,29 @@ const Layout = ({ location, title, children }) => {
       style={{
         marginLeft: `auto`,
         marginRight: `auto`,
-        maxWidth: rhythm(24),
+        maxWidth: rhythm(30),
         padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
       }}
     >
       <header>{header}</header>
       <main>{children}</main>
-      <footer>
+      <footer
+        style={{
+          marginTop: rhythm(2),
+        }}
+      >
         <nav>
-          <a href="https://wwawing.com" target="_blank" rel="noopenner noreferrer">WWA Wing</a>
+          <p>
+            <a href="https://wwawing.com" target="_blank" rel="noopenner noreferrer">WWA Wing</a>
+          </p>
         </nav>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
+        <p>Internet RPG "World Wide Adventure" © 1996-2017 NAO</p>
+        <p>"WWA Wing" © 2013-{new Date().getFullYear()} WWA Wing Team</p>
+        <p>
+          Built with
+          {` `}
+          <a href="https://www.gatsbyjs.org">Gatsby</a>
+        </p>
       </footer>
     </div>
   )

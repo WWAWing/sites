@@ -1,7 +1,7 @@
 import Typography from "typography"
 import Bootstrap from "typography-theme-bootstrap"
 
-Bootstrap.overrideThemeStyles = () => ({
+Bootstrap.overrideThemeStyles = ({ rhythm }) => ({
   "a:link": {
     color: `#337ab7`,
     textDecoration: `none`,
@@ -11,6 +11,10 @@ Bootstrap.overrideThemeStyles = () => ({
   },
   "a:hover": {
     textDecoration: `underline`,
+  },
+  "p": {
+    marginTop: 0,
+    marginBottom: rhythm(0.7)
   }
 })
 
