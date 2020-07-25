@@ -56,13 +56,26 @@ const Bio = () => {
           borderRadius: `50%`,
         }}
       />
-      <p>
-        <strong>{author.name}</strong> がこのブログの記事を書いています。 {author.summary}
-        {` `}
-        <a href={`https://twitter.com/${social.twitter}`}>
-          必要であれば Twitter アカウントもフォローしましょう。
-        </a>
-      </p>
+      <div>
+        <p
+          style={{
+            marginBottom: rhythm(0.5),
+          }}
+        >
+          {author.summary}
+        </p>
+        <ul
+          style={{
+            marginTop: rhythm(0.5),
+          }}
+        >
+          <li>
+            <a href={`https://twitter.com/${social.twitter}`} target="_blank" rel="noopenner noreferrer">
+              必要であれば Twitter アカウントもフォローしましょう。
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   )
 }

@@ -1,17 +1,28 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
+import Image from "gatsby-image"
 
-import { rhythm, scale } from "../utils/typography"
+import { rhythm } from "../utils/typography"
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   let header
+  const data = useStaticQuery(graphql`
+    query TitleBannerQuery {
+      banner: file(absolutePath: { regex: "/title-banner.png/" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
 
   if (location.pathname === rootPath) {
     header = (
       <h1
         style={{
-          ...scale(1.5),
           marginBottom: rhythm(1.5),
           marginTop: 0,
         }}
@@ -23,6 +34,15 @@ const Layout = ({ location, title, children }) => {
           }}
           to={`/`}
         >
+          <Image
+            fluid={data.banner.childImageSharp.fluid}
+            alt={title}
+            style={{
+              display: `inline-block`,
+              width: 150,
+              marginRight: rhythm(0.5)
+            }}
+          />
           {title}
         </Link>
       </h1>
@@ -31,7 +51,6 @@ const Layout = ({ location, title, children }) => {
     header = (
       <h3
         style={{
-          fontFamily: `Montserrat, sans-serif`,
           marginTop: 0,
         }}
       >
@@ -42,6 +61,15 @@ const Layout = ({ location, title, children }) => {
           }}
           to={`/`}
         >
+          <Image
+            fluid={data.banner.childImageSharp.fluid}
+            alt={title}
+            style={{
+              display: `inline-block`,
+              width: 120,
+              marginRight: rhythm(0.25)
+            }}
+          />
           {title}
         </Link>
       </h3>
@@ -59,6 +87,9 @@ const Layout = ({ location, title, children }) => {
       <header>{header}</header>
       <main>{children}</main>
       <footer>
+        <nav>
+          <a href="https://wwawing.com" target="_blank" rel="noopenner noreferrer">WWA Wing</a>
+        </nav>
         © {new Date().getFullYear()}, Built with
         {` `}
         <a href="https://www.gatsbyjs.org">Gatsby</a>
