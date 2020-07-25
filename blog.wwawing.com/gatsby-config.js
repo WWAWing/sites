@@ -3,9 +3,9 @@ module.exports = {
     title: `WWA Wing 開発ブログ`,
     author: {
       name: `WWA Wing Team`,
-      summary: `WWA Wing のアップデート情報や Tips などを書いていきます。`,
+      summary: `インターネットRPG World Wide Adventure (WWA) の現代のWeb技術の実行環境「WWA Wing」を開発しています。`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `WWA Wing のアップデート情報や Tips などを書いていきます。`,
     siteUrl: `https://blog.wwawing.com/`,
     social: {
       twitter: `wwa_wing`,
