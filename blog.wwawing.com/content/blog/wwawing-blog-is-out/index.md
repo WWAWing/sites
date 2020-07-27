@@ -10,4 +10,4 @@ WWA Wing Team です。
 
 これまで WWA Wing のアップデート情報を [Aokashi Room](https://aokashi.hatenablog.jp) で発信していましたが、WWA Wing Team のメンバーから記事が執筆出来るようするために、本ブログとして独立しました。
 
-今後はアップデート情報の他、 WWA Wing の使用方法について簡単な開設も含めようと思います。
+今後はアップデート情報の他、 WWA Wing の使用方法について簡単な解説も含めようと思います。
