@@ -5,8 +5,19 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
+import { BlogPostBySlugQuery } from "../../graphql-types"
 
-const BlogPostTemplate = ({ data, pageContext, location }) => {
+interface Props {
+  data: BlogPostBySlugQuery,
+  pageContext: {
+    slug: string,
+    previous: any,
+    next: any,
+  }, // TODO: 後ほど gatsby-node.js を TypeScript 化して型定義を移す
+  location: string,
+}
+
+const BlogPostTemplate: React.FC<Props> = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext

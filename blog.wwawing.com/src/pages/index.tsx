@@ -6,30 +6,9 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 
-type DataProps = {
-  site: {
-    siteMetadata: {
-      title: string
-    }
-  },
-  allMarkdownRemark: {
-    edges: {
-      node: {
-        excerpt: string,
-        fields: {
-          slug: string
-        }
-        frontmatter: {
-          date: string,
-          title: string,
-          description: string
-        }
-      }
-    }[]
-  }
-}
+import { IndexPageQuery } from "../../graphql-types"
 
-const BlogIndex: React.FC<PageProps<DataProps>> = ({ data, location }) => {
+const BlogIndex: React.FC<PageProps<IndexPageQuery>> = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
 
