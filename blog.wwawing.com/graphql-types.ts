@@ -2981,6 +2981,14 @@ export type BioQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type BioQueryQuery = { avatar?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }>, site?: Maybe<{ siteMetadata?: Maybe<{ author?: Maybe<Pick<SiteSiteMetadataAuthor, 'name' | 'summary'>>, social?: Maybe<Pick<SiteSiteMetadataSocial, 'twitter'>> }> }> };
 
+export type SeoMetadataQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type SeoMetadataQueryQuery = { site?: Maybe<{ siteMetadata?: Maybe<(
+      Pick<SiteSiteMetadata, 'title' | 'description'>
+      & { social?: Maybe<Pick<SiteSiteMetadataSocial, 'twitter'>> }
+    )> }> };
+
 export type NotFoundPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 

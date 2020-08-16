@@ -9,9 +9,17 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import { SeoMetadataQueryQuery } from "../../graphql-types"
 
-const SEO = ({ description, lang, meta, title }) => {
-  const { site } = useStaticQuery(
+interface Props {
+  description: string,
+  lang: string,
+  meta: any, // FIXME: react-helment の meta プロパティに concat できる型が見つからない
+  title: string,
+}
+
+const SEO: React.FC<Props> = ({ description, lang, meta, title }) => {
+  const { site }: SeoMetadataQueryQuery = useStaticQuery(
     graphql`
       query SEOMetadataQuery {
         site {
