@@ -7,7 +7,7 @@
   "scripts": {
     "start": "npm run release",
     "make-dist": "npm run clean:dist && ts-node ./scripts/make-zip",
-    "release": "ts-node ./scripts/release && ts-node ./scripts/generate-download-page",
+    "release": "ts-node ./scripts/generate-download-page",
     "clean": "npm run clean:dist",
     "clean:dist": "shx rm -rf ./output",
     "check-released": "ts-node ./scripts/check-latest-version-released",
@@ -30,7 +30,6 @@
     "@types/node": "^12.12.54",
     "@types/pug": "^2.0.4",
     "@types/shelljs": "^0.8.8",
-    "@wwawing/all": "3.4.2",
     "escape-html": "^1.0.3",
     "glob": "^7.1.6",
     "jszip": "^3.5.0",
