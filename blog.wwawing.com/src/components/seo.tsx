@@ -12,9 +12,9 @@ import { useStaticQuery, graphql } from "gatsby"
 import { SeoMetadataQueryQuery } from "../../graphql-types"
 
 interface Props {
-  description: string,
-  lang: string,
-  meta: any, // FIXME: react-helment の meta プロパティに concat できる型が見つからない
+  description?: string,
+  lang?: string,
+  meta?: any, // FIXME: react-helment の meta プロパティに concat できる型が見つからない
   title: string,
 }
 
