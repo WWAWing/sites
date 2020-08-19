@@ -2,7 +2,6 @@
   "name": "@wwawing/sites",
   "version": "0.0.0",
   "description": "WWA Wing Release Pages",
-  "main": "index.js",
   "private": true,
   "scripts": {
     "start": "run-p fill-version generate-download-page",
