@@ -11,8 +11,7 @@ FQDN がディレクトリ名と対応しています。
 
 ## CI類
 - dependabot: `@wwawing/all` などの依存パッケージの新しいバージョンがpublishされた時に、そのバージョンをリリースするPull Requestを作成する。
-- travis-ci.com: masterブランチに新しいコミットが生成された時, 依存している `@wwawing/all` のバージョンがリリースされてない時に動く。配布物(完全版, 更新版)のZIPを生成する。生成されたZIPは get.wwawing.com 内に配置され、masterブランチにcommit+pushされる。
-- netlify: masterブランチに新しいコミットが生成された時, 依存している　`@wwawing/all` のバージョンが既にリリースされている場合に動く。サイトをデプロイする。（準備中 現在はすべてのコミットに対して生成している）
+- netlify: masterブランチに新しいコミットが生成された時, 各ページを生成して Netlify のホスティング環境に配置する。
 
 ## サイト以外のディレクトリ
 - `./scripts`: 新規リリースなどで使うスクリプトが格納されるディレクトリ。
@@ -26,13 +25,10 @@ $ npm install
 ```
 
 ### コマンド
-- `npm start`: `npm run make-dist` して　`npm run release` する。
-- `npm run make-dist`: `./output` 下にWWA Wingの配布物{圧縮前, 圧縮後}x{完全版, 更新版}の4つを生成。
-- `npm run release`: `npm run make-dist` で生成したファイルを `./get.wwawing.com` 下にコピーし、 `./get.wwawing,com/index.html` から配布物にリンクを貼る。
+- `npm run generate-download-page`: ダウンロードページを生成する。
+- `npm run fill-version`: トップページを生成する。(トップページに最新バージョンを書き込む) 
+- `npm start`: 上記2つを並列に実行します。
 
 ### ライセンス
 - MIT
 - ただし、配布物の画像・音源・ドキュメントは CC-BY-4.0
-
-### その他
-- 配布物に詰め込まれるファイルは `npm install` した時に `node_modules` 下にダウンロードされる `@wwawing/****` パッケージから準備される。
