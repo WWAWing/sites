@@ -7,7 +7,6 @@ FQDN がディレクトリ名と対応しています。
 | FQDN / ディレクトリ名 | 概要 |
 | --------------------- | ---- |
 | wwawing.com           | トップページ・サンプルページ |
-| get.wwawing.com       | 配布ページ |
 
 ## CI類
 - dependabot: `@wwawing/all` などの依存パッケージの新しいバージョンがpublishされた時に、そのバージョンをリリースするPull Requestを作成する。
