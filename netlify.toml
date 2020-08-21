@@ -25,3 +25,7 @@
 [[redirects]]
   from = "/wing-x/*"
   to = "https://old-experiments.wwawing.com/wing-x/:splat"
+
+[[redirects]]
+  from = "/wwap"
+  to = "https://wwaphoenix.github.io/"
