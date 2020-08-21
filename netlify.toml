@@ -17,3 +17,11 @@
 [[redirects]]
   from = "/wing/spaceisland.html"
   to = "https://archive.chashitsu.org/wing/seikatsu.html"
+
+[[redirects]]
+  from = "/wwaaa/*"
+  to = "https://old-experiments.wwawing.com/wwaaa/:splat"
+
+[[redirects]]
+  from = "/wing-x/*"
+  to = "https://old-experiments.wwawing.com/wing-x/:splat"
