@@ -8,25 +8,25 @@ html(lang="ja")
         h2 最新版
         ul
             li
-                a(href="./wwawing-dist-latest.zip") 完全版 
+                a(href="https://github.com/WWAWing/WWAWing/releases/latest/download/wwawing-dist.zip") 完全版 
             li
-                a(href="./wwawing-update-latest.zip") 更新版 
+                a(href="https://github.com/WWAWing/WWAWing/releases/latest/download/wwawing-update.zip") 更新版 
 
         h2 過去のリリース
         ul
             each version in releases
                 li
-                    | #{version}
+                    | v#{version}
                     | (
-                    a(href="./wwawing-dist-v" + version + ".zip") 完全版
+                    a(href="https://github.com/WWAWing/WWAWing/releases/download/v" + version + "/wwawing-dist.zip") 完全版
                     | )
                     | (
-                    a(href="./wwawing-update-v" + version + ".zip") 更新版
+                    a(href="https://github.com/WWAWing/WWAWing/releases/download/v" + version + "/wwawing-update.zip") 更新版
                     | )
         footer
             p
                 a(href="./old-releases") さらに過去のリリースを見る
             p
-                a(href="https://wwawing.com/") WWA Wingのトップに戻る
+                a(href="../") WWA Wingのトップに戻る
             p
                 | (C) 2013-2020 WWA Wing Team
