@@ -9,7 +9,7 @@ FQDN がディレクトリ名と対応しています。
 | wwawing.com           | トップページ・サンプルページ |
 
 ## CI類
-- dependabot: `@wwawing/all` などの依存パッケージの新しいバージョンがpublishされた時に、そのバージョンをリリースするPull Requestを作成する。
+- dependabot: 依存パッケージの新しいバージョンがpublishされた時に、そのバージョンをリリースするPull Requestを作成する。
 - netlify: masterブランチに新しいコミットが生成された時, 各ページを生成して Netlify のホスティング環境に配置する。
 
 ## サイト以外のディレクトリ
