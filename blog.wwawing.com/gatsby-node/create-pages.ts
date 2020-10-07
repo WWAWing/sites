@@ -1,14 +1,24 @@
 import path from 'path'
 import { GatsbyNode } from 'gatsby'
-import { BlogPostsQuery, MarkdownRemarkFields, MarkdownRemarkFrontmatter } from '../graphql-types'
 
 /**
- * allMarkdownRemark の1つ1つの記事の型情報です。
- *     主に前後記事のリンクを作成する際に使用します。
+ * @todo BlogPostsQuery は graphql-types.ts から読み取ることも可能ですが、 createPage の段階で型が合いません
  */
+type BlogPostsQuery = {
+  allMarkdownRemark: {
+    edges: {
+      node: BlogPostNode
+    }[]
+  }
+}
+
 export type BlogPostNode = {
-  fields?: Pick<MarkdownRemarkFields, "slug">
-  frontmatter?: Pick<MarkdownRemarkFrontmatter, "title">
+  fields: {
+    slug: string
+  },
+  frontmatter: {
+    title: string
+  }
 }
 
 export const createPages: GatsbyNode["createPages"] = async ({ graphql, actions }) => {

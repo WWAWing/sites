@@ -1,5 +1,6 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
+import Image from "gatsby-image"
 
 import { rhythm } from "../utils/typography"
 
@@ -8,6 +9,17 @@ declare const __PATH_PREFIX__: string // TODO: Gatsby から型定義を持っ�
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   let header
+  const data = useStaticQuery(graphql`
+    query TitleBannerQuery {
+      banner: file(absolutePath: { regex: "/title-banner.png/" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
 
   if (location.pathname === rootPath) {
     header = (
@@ -24,7 +36,15 @@ const Layout = ({ location, title, children }) => {
           }}
           to={`/`}
         >
-          {/* TODO: 画像を持っていく */}
+          <Image
+            fluid={data.banner.childImageSharp.fluid}
+            alt={title}
+            style={{
+              display: `inline-block`,
+              width: 150,
+              marginRight: rhythm(0.5)
+            }}
+          />
           {title}
         </Link>
       </h1>
@@ -43,6 +63,15 @@ const Layout = ({ location, title, children }) => {
           }}
           to={`/`}
         >
+          <Image
+            fluid={data.banner.childImageSharp.fluid}
+            alt={title}
+            style={{
+              display: `inline-block`,
+              width: 120,
+              marginRight: rhythm(0.25)
+            }}
+          />
           {title}
         </Link>
       </h3>
