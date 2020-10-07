@@ -128,7 +128,17 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
-    `gatsby-plugin-graphql-codegen`,
+    {
+      resolve: `gatsby-plugin-graphql-codegen`,
+      options: {
+        documentPaths: [
+          `./src/**/*.{ts,tsx}`,
+          `./.cache/fragments/*.js`,
+          `./node_modules/gatsby-*/**/*.js`,
+          `./gatsby-node/*.{ts,tsx}`
+        ]
+      }
+    },
     `gatsby-plugin-typescript`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

@@ -1,6 +1,9 @@
 import path from 'path'
 import { GatsbyNode } from 'gatsby'
 
+/**
+ * @todo BlogPostsQuery は graphql-types.ts から読み取ることも可能ですが、 createPage の段階で型が合いません
+ */
 type BlogPostsQuery = {
   allMarkdownRemark: {
     edges: {
@@ -9,7 +12,6 @@ type BlogPostsQuery = {
   }
 }
 
-// TODO: graphql-types.ts から有効な型情報を持っていく
 export type BlogPostNode = {
   fields: {
     slug: string

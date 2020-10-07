@@ -2505,6 +2505,7 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___theme_color_in_head'
   | 'pluginCreator___pluginOptions___cacheDigest'
   | 'pluginCreator___pluginOptions___pathToConfigModule'
+  | 'pluginCreator___pluginOptions___documentPaths'
   | 'pluginCreator___pluginOptions___pathCheck'
   | 'pluginCreator___nodeAPIs'
   | 'pluginCreator___browserAPIs'
@@ -2744,6 +2745,7 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___theme_color_in_head'
   | 'pluginOptions___cacheDigest'
   | 'pluginOptions___pathToConfigModule'
+  | 'pluginOptions___documentPaths'
   | 'pluginOptions___pathCheck'
   | 'nodeAPIs'
   | 'browserAPIs'
@@ -2887,6 +2889,7 @@ export type SitePluginPluginOptions = {
   theme_color_in_head?: Maybe<Scalars['Boolean']>;
   cacheDigest?: Maybe<Scalars['String']>;
   pathToConfigModule?: Maybe<Scalars['String']>;
+  documentPaths?: Maybe<Array<Maybe<Scalars['String']>>>;
   pathCheck?: Maybe<Scalars['Boolean']>;
 };
 
@@ -2937,6 +2940,7 @@ export type SitePluginPluginOptionsFilterInput = {
   theme_color_in_head?: Maybe<BooleanQueryOperatorInput>;
   cacheDigest?: Maybe<StringQueryOperatorInput>;
   pathToConfigModule?: Maybe<StringQueryOperatorInput>;
+  documentPaths?: Maybe<StringQueryOperatorInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
 };
 
@@ -3143,3 +3147,8 @@ export type GatsbyImageSharpSizes_WithWebp_TracedSvgFragment = Pick<ImageSharpSi
 export type GatsbyImageSharpSizes_NoBase64Fragment = Pick<ImageSharpSizes, 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
 
 export type GatsbyImageSharpSizes_WithWebp_NoBase64Fragment = Pick<ImageSharpSizes, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
+
+export type BlogPostsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type BlogPostsQuery = { allMarkdownRemark: { edges: Array<{ node: { fields?: Maybe<Pick<MarkdownRemarkFields, 'slug'>>, frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'title'>> } }> } };
