@@ -9,6 +9,7 @@ type BlogPostsQuery = {
   }
 }
 
+// TODO: graphql-types.ts から有効な型情報を持っていく
 export type BlogPostNode = {
   fields: {
     slug: string
