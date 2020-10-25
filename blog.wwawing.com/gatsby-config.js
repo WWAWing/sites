@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `WWA Wing 開発ブログ`,
+    title: `WWA Wing ブログ`,
     author: {
       name: `WWA Wing Team`,
       summary: `インターネットRPG World Wide Adventure (WWA) の現代のWeb技術の実行環境「WWA Wing」を開発しています。`,
@@ -104,7 +104,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "WWA Wing 開発ブログ RSS Feed",
+            title: "WWA Wing ブログ RSS Feed",
           }
         ]
       }
@@ -112,7 +112,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `WWA Wing 開発ブログ`,
+        name: `WWA Wing ブログ`,
         short_name: `WWAWingブログ`,
         start_url: `/`,
         background_color: `#ffffff`,

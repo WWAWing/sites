@@ -1,6 +1,6 @@
-# WWA Wing 開発ブログ
+# WWA Wing ブログ
 
-WWA Wing 開発ブログのソースコードです。
+WWA Wing ブログのソースコードです。
 
 ブログは静的サイトとなっており、 [Gatsby](https://www.gatsbyjs.org/) を使用して生成しています。
 
