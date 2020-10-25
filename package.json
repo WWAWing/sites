@@ -2,16 +2,10 @@
   "name": "@wwawing/sites",
   "version": "0.0.0",
   "description": "WWA Wing Release Pages",
-  "main": "index.js",
   "private": true,
   "scripts": {
-    "start": "npm run release",
-    "make-dist": "npm run clean:dist && ts-node ./scripts/make-zip",
-    "release": "ts-node ./scripts/release && ts-node ./scripts/generate-download-page",
-    "clean": "npm run clean:dist",
-    "clean:dist": "shx rm -rf ./output",
-    "check-released": "ts-node ./scripts/check-latest-version-released",
-    "print-version": "ts-node ./scripts/print-version",
+    "start": "run-p fill-version generate-download-page",
+    "generate-download-page": "ts-node ./scripts/generate-download-page",
     "fill-version": "ts-node ./scripts/fill-version-in-top-page"
   },
   "repository": {
@@ -27,19 +21,17 @@
   "devDependencies": {
     "@types/escape-html": "^1.0.0",
     "@types/jszip": "^3.4.1",
-    "@types/node": "^12.12.51",
+    "@types/node": "^12.19.1",
     "@types/pug": "^2.0.4",
     "@types/shelljs": "^0.8.8",
-    "@wwawing/all": "3.4.1",
     "escape-html": "^1.0.3",
     "glob": "^7.1.6",
     "jszip": "^3.5.0",
-    "lerna": "^3.22.1",
     "npm-run-all": "^4.1.5",
     "pug": "^3.0.0",
     "shelljs": "^0.8.4",
     "shx": "^0.3.2",
-    "ts-node": "^8.10.2",
-    "typescript": "^3.9.7"
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.3"
   }
 }
