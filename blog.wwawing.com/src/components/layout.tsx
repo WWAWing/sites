@@ -4,6 +4,8 @@ import Image from "gatsby-image"
 
 import { rhythm } from "../utils/typography"
 
+declare const __PATH_PREFIX__: string // TODO: Gatsby から型定義を持ってこれるようにする
+
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   let header
