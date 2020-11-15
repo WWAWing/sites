@@ -42,6 +42,7 @@ export const createPages: GatsbyNode["createPages"] = async ({ graphql, actions 
               }
             }
           }
+          distinct(field: frontmatter___category)
         }
       }
     `
