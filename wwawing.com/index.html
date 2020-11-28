@@ -90,7 +90,7 @@
             </button>
             <a class="navbar-brand" href="./">
               <img src="./assets/wwawing/wwawing-disp.png" alt="WWA Wing">
-              <span class="version-wwa" id="version-wwa-nav">{{ ##FILL_LATEST_VERSION## }}<span>
+              <span class="version-wwa" id="version-wwa-nav">{{ ##FILL_LATEST_VERSION## }}</span>
             </a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
@@ -99,14 +99,16 @@
                     class="glyphicon glyphicon-download-alt"></span> 完全版</a></li>
               <li><a href="https://github.com/WWAWing/WWAWing/releases/latest/download/wwawing-update.zip" class="dl-wwa" role="button"><span
                     class="glyphicon glyphicon-download-alt"></span> 更新版</a></li>
-              <li><a href="./wing/manual.html" class="dl-wwa" role="button"><span
-                    class="glyphicon glyphicon-book"></span> マニュアル</a></li>
               <li><a href="https://wwaphoenix.github.io/" class="dl-wwa" role="button"><span class="glyphicon glyphicon-file"></span>
                   Phoenix</a></li>
-              <li><a href="http://jbbs.shitaraba.net/netgame/14732/" class="report-bug-wwa" role="button"><span
-                    class="glyphicon glyphicon-exclamation-sign"></span> 不具合報告</a></li>
+              <li><a href="./wing/manual.html" class="other-wwa" role="button"><span
+                    class="glyphicon glyphicon-book"></span> マニュアル</a></li>
+              <li><a href="https://blog.wwawing.com/" class="other-wwa" role="button"><span
+                    class="glyphicon glyphicon-pencil"></span> ブログ</a></li>
               <li><a href="#" class="other-wwa go-to-examples" role="button"><span
                     class="glyphicon glyphicon-play-circle"></span> サンプル</a></li>
+              <li><a href="http://jbbs.shitaraba.net/netgame/14732/" class="report-bug-wwa" role="button"><span
+                    class="glyphicon glyphicon-exclamation-sign"></span> 不具合報告</a></li>
             </ul>
           </div>
         </div>
@@ -210,7 +212,7 @@
     <div class="row">
       <div class="col-md-6">
         <div class="page-header">
-          <h1 id="wwa-examples">サンプル・マニュアル</h1>
+          <h1 id="wwa-examples">コンテンツ</h1>
         </div>
         <h2>サンプル</h2>
         <ul>
@@ -221,18 +223,25 @@
         </ul>
         </p>
 
-        <h2>マニュアル</h2>
-        <a class="btn btn-success" href="./wing/manual.html" role="button">最新版のマニュアルを見る &raquo;</a>
+        <h2>資料</h2>
+        <p>最新版のマニュアルをサイト上で閲覧可能です。また、更新情報・技術的な仕様などについて、ブログで情報を発信しています。</p>
+        <a class="btn btn-primary" href="./wing/manual.html" role="button">マニュアルを見る &raquo;</a>
+        <a class="btn btn-primary" href="https://blog.wwawing.com/" role="button">ブログを見る &raquo;</a>
+
+        <h2>不具合報告</h2>
+        <p>不具合報告は、総合掲示板をご利用ください。GitHub のアカウントをお持ちであれば、Issue での報告も歓迎します。</p>
+        <a class="btn btn-primary" href="http://jbbs.shitaraba.net/netgame/14732/" role="button">総合掲示板を見る &raquo;</a>
+        <a class="btn btn-primary" href="https://github.com/WWAWing/WWAWing/issues" role="button">Issue を見る &raquo;</a>
 
         <h2>WWASAVE.js β版</h2>
         <p>パスワードセーブ永続化の実験台です。</p>
-        <a class="btn btn-success" href="http://v.chashitsu.org:8080/client/" role="button">試してみる! &raquo;</a>
+        <a class="btn btn-primary" href="http://v.chashitsu.org:8080/client/" role="button">試してみる! &raquo;</a>
         <a class="btn btn-default" href="https://github.com/WWAWing/WWASAVE.js/" role="button">ソースコード(GitHub)
           &raquo;</a>
 
         <h2>旧版</h2>
         <p>古いバージョンをダウンロードすることができます。最新版で不具合が出る場合にご利用ください。バージョン W3.15c以前は通常版のみです。</p>
-        <p><a class="btn btn-default btn-success" href="./downloads/" role="button"> 古いバージョンを見る &raquo;</a>
+        <p><a class="btn btn-default btn-primary" href="./downloads/" role="button"> 古いバージョンを見る &raquo;</a>
         </p>
 
       </div>
