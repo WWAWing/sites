@@ -31,3 +31,8 @@ $ npm install
 ### ライセンス
 - MIT
 - ただし、配布物の画像・音源・ドキュメントは CC-BY-4.0
+
+## 行動規範
+- Contributer Covenant Code of Conduct に従います。
+  - [原文(英語)](./CODE_OF_CONDUCT.md)
+  - [日本語訳](./CODE_OF_CONDUCT_ja.md)
