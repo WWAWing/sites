@@ -30,6 +30,7 @@ jobs:
           git add -u
           git checkout -b "${{ env.BRANCH_NAME }}"
           git commit -m "feat(releases): Release v${{ env.WWA_WING_VERSION }}"
+          git push -u origin "${{ env.BRANCH_NAME }}"
 
       - name: "Pull request"
-        run:  "npx ts-node ./scripts/creaate-pr"
+        run:  npx ts-node ./scripts/create-pr
