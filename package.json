@@ -4,7 +4,7 @@
   "description": "WWA Wing Release Pages",
   "private": true,
   "scripts": {
-    "start": "run-p fill-version generate-download-page",
+    "start": "./scripts/deploy-demo.sh && run-p fill-version generate-download-page",
     "generate-download-page": "ts-node ./scripts/generate-download-page",
     "fill-version": "ts-node ./scripts/fill-version-in-top-page"
   },
