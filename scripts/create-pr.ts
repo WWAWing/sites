@@ -1,6 +1,6 @@
 import { Octokit } from "@octokit/rest";
 
-const WWA_WING_RELEASE_TOKEN = process.env.GITHUB_TOKEN;
+const WWA_WING_RELEASE_TOKEN = process.env.WWA_WING_RELEASE_TOKEN;
 const WWA_WING_VERSION = process.env.WWA_WING_VERSION;
 const BRANCH_NAME = process.env.BRANCH_NAME;
 
