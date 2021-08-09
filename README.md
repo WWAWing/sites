@@ -8,6 +8,9 @@ FQDN がディレクトリ名と対応しています。
 | --------------------- | ---- |
 | wwawing.com           | トップページ・サンプルページ |
 
+
+**※ \*nix環境以外でのページ生成はサポートされていません。 お手数ですが、Windows の方は Windows Subsystem for Linux のご利用をお願いいたします。**
+
 ## CI類
 - netlify: masterブランチに新しいコミットが生成された時, 各ページを生成して Netlify のホスティング環境に配置する。
 
@@ -22,9 +25,10 @@ $ npm install
 ```
 
 ### コマンド
+- `./scripts/deploy-demo.sh `: デモページの各種ファイルを配置する。
 - `npm run generate-download-page`: ダウンロードページを生成する。
 - `npm run fill-version`: トップページを生成する。(トップページに最新バージョンを書き込む) 
-- `npm start`: 上記2つを並列に実行します。
+- `npm start`: 上記3つを実行します。
 
 ### ライセンス
 - MIT

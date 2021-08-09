@@ -1,3 +1,7 @@
+[build]
+  publish = "wwawing.com"
+  command = "npm start"
+
 [[redirects]]
   from = "/wing/24life.html"
   to = "https://archive.chashitsu.org/wing/24life/24life.html"
