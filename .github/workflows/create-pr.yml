@@ -27,9 +27,9 @@ jobs:
 
       - name: "Commit"
         run: |
-        git add -u
-        git checkout -b ${{env.BRANCH_NAME}}
-        git commit -m "feat(releases): Release v${{env.WWA_WING_VERSION}}"
+          git add -u
+          git checkout -b ${{ env.BRANCH_NAME }}
+          git commit -m "feat(releases): Release v${{ env.WWA_WING_VERSION }}"
 
       - name: "Pull request"
         run:  "npx ts-node ./scripts/creaate-pr"
