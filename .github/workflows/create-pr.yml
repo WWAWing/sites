@@ -17,7 +17,7 @@ jobs:
           git config user.name "[Automatically Released] Matsuyuki"
           git config user.email "matsuyuki.eca@gmail.com"
           echo "WWA_WING_VERSION=${{ github.event.client_payload.targetVersion }}" >> "$GITHUB_ENV"
-          echo "WWA_WING_RELEASE_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> "$GITHUB_ENV"
+          echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> "$GITHUB_ENV"
           echo "BRANCH_NAME=feature/update-to-v${{ github.event.client_payload.targetVersion }}" >> "$GITHUB_ENV"
 
       - name: "Install"

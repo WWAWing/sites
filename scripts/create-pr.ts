@@ -1,12 +1,12 @@
 import { Octokit } from "@octokit/rest";
 
-const WWA_WING_RELEASE_TOKEN = process.env.WWA_WING_RELEASE_TOKEN;
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const WWA_WING_VERSION = process.env.WWA_WING_VERSION;
 const BRANCH_NAME = process.env.BRANCH_NAME;
 
 const createSitesPullRequest = async (branchName: string, version: string) => {
   try {
-    const octokit = new Octokit({ auth: WWA_WING_RELEASE_TOKEN, baseUrl: "https://api.github.com", request: { timeout: 5000 } });
+    const octokit = new Octokit({ auth: GITHUB_TOKEN, baseUrl: "https://api.github.com", request: { timeout: 5000 } });
     await octokit.pulls.create({
       owner: "WWAWing",
       repo: "sites",
@@ -20,8 +20,8 @@ const createSitesPullRequest = async (branchName: string, version: string) => {
   }
 }
 
-if (!WWA_WING_RELEASE_TOKEN) {
-  console.error("GitHub Token がありません. 環境変数 WWA_WING_RELEASE_TOKEN を与えてください.");
+if (!GITHUB_TOKEN) {
+  console.error("GitHub Token がありません. 環境変数 GITHUB_TOKEN を与えてください.");
   process.exit(1);
 }
 
