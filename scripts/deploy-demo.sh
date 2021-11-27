@@ -3,7 +3,7 @@
 set -eu
 
 ## スタンダードマップとマニュアルを最新から持ってきて配置
-LATEST_VERSION=$(node -e "console.log(require('./releases.json').releases[0])")
+LATEST_VERSION=$(node -e "console.log(require('./releases.json').stable.releases[0])")
 wget "https://github.com/WWAWing/WWAWing/releases/download/v$LATEST_VERSION/wwawing-dist.zip"
 unzip -d wwawing-dist wwawing-dist.zip
   

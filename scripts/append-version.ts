@@ -2,13 +2,24 @@ import releases from "../releases.json";
 import fs from "fs";
 import path from "path";
 
+// releases.json に引数で与えられたバージョンを追記します。
+// 文字列の "alpha" もしくは "beta" がバージョン名に含まれている場合、不安定版の方に追記されます。
+// 不安定版は、最新 3件のみ保持します。
 const releasesJson = path.join(".", "releases.json");
 
-function appendVersionToList(version: string) {
-    if (!releases.releases.find((target) => target === version)) {
-        releases.releases.unshift(version);
-        fs.writeFileSync(releasesJson, JSON.stringify(releases) + "\n");
+const UNSTABLE_VERSION_DISPLAY_NUM = 3;
+
+function appendVersionToList(version: string, isStable: boolean) {
+    const list = isStable ? releases.stable : releases.unstable;
+    if (list.releases.find((target) => target === version)) {
+        return;
     }
+    list.releases.unshift(version);
+    if (!isStable && list.releases.length > UNSTABLE_VERSION_DISPLAY_NUM) {
+        // 表示最大件数を超えたら最も古いバージョンを消す
+        list.releases.pop();
+    }
+    fs.writeFileSync(releasesJson, JSON.stringify(releases) + "\n");
 }
 
 if( process.argv.length < 3 || !process.argv[2]) {
@@ -17,4 +28,7 @@ if( process.argv.length < 3 || !process.argv[2]) {
     process.exit();
 }
 
-appendVersionToList(process.argv[2]);
+const version = process.argv[2];
+const isStable = !version.match(/alpha/) && !version.match(/beta/);
+
+appendVersionToList(version, isStable);
