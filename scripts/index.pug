@@ -14,13 +14,14 @@ html(lang="ja")
         
         if unstable.releases.length
             h2 不安定版
+            p 開発途中のバージョンを公開しています。現在は、ユーザ変数周りの機能 (旧 WWA Wing XE)が入ったバージョンです。
+            p 予告なく仕様が変更される場合がありますのでご注意ください。最新3件のみ表示しています。
             p
-                | 予告なく仕様が変更される場合がありますのでご注意ください。最新3件のみ表示しています。
                 | ここにない版をお探しの場合は、
                 | (
                 a(href="https://github.com/WWAWing/WWAWing/releases") GitHub の Releases ページ
                 | )
-                | から、入手したいバージョン名を検索し、Assets &gt; wwawing-dist.zip (完全版) もしくは wwawing-update.zip (更新版) をダウンロードしてください。
+                | から、入手したいバージョン名を検索し、Assets 内 wwawing-dist.zip (完全版) もしくは wwawing-update.zip (更新版) をダウンロードしてください。
             ul
                 each version in unstable.releases
                     li
