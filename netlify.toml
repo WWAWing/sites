@@ -2,6 +2,10 @@
   publish = "wwawing.com"
   command = "npm start"
 
+[build.environment]
+  NODE_VERSION = "16.13.2"
+  NPM_VERSION = "8"
+
 [[redirects]]
   from = "/wing/24life.html"
   to = "https://archive.chashitsu.org/wing/24life/24life.html"

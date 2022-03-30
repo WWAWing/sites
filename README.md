@@ -9,7 +9,10 @@ FQDN がディレクトリ名と対応しています。
 | wwawing.com           | トップページ・サンプルページ |
 
 
-**※ \*nix環境以外でのページ生成はサポートされていません。 お手数ですが、Windows の方は Windows Subsystem for Linux のご利用をお願いいたします。**
+## 必要な環境
+- node 16
+- npm 8
+- **※ \*nix環境以外でのページ生成はサポートされていません。 お手数ですが、Windows の方は Windows Subsystem for Linux のご利用をお願いいたします。**
 
 ## CI類
 - netlify: masterブランチに新しいコミットが生成された時, 各ページを生成して Netlify のホスティング環境に配置する。
