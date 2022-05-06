@@ -9,9 +9,12 @@ unzip -d wwawing-dist wwawing-dist.zip
   
 SRC_DIR="./wwawing-dist/wwawing-dist"
 DEST_DIR="./wwawing.com/wing"
+DEST_DIR_BETA="./wwawing.com/beta"
 cp "$SRC_DIR/manual.html" $DEST_DIR
 cp "$SRC_DIR/mapdata/wwamap.dat" $DEST_DIR
+cp "$SRC_DIR/mapdata/wwamap.dat" $DEST_DIR_BETA
 cp "$SRC_DIR/mapdata/making.gif" $DEST_DIR
+cp "$SRC_DIR/mapdata/making.gif" $DEST_DIR_BETA
 cp "$SRC_DIR/mapdata/island02.dat" $DEST_DIR
 cp "$SRC_DIR/mapdata/island02.gif" $DEST_DIR
 cp "$SRC_DIR/mapdata/caves01.dat" $DEST_DIR
@@ -19,6 +22,8 @@ cp "$SRC_DIR/mapdata/caves01.gif" $DEST_DIR
 cp "$SRC_DIR/mapdata/caves02.dat" $DEST_DIR
 cp "$SRC_DIR/mapdata/caves02.gif" $DEST_DIR
 cp "$SRC_DIR/mapdata/cover.gif" $DEST_DIR
+cp "$SRC_DIR/mapdata/cover.gif" $DEST_DIR_BETA
 cp -R "$SRC_DIR/mapdata/audio" $DEST_DIR
+cp -R "$SRC_DIR/mapdata/audio" $DEST_DIR_BETA
 
 rm -rf ./wwawing-dist ./wwawing-dist.zip
