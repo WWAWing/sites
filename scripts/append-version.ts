@@ -2,20 +2,24 @@ import releases from "../releases.json";
 import fs from "fs";
 import path from "path";
 
+type ReleaseType = "alpha" | "beta" | "stable";
+
 // releases.json に引数で与えられたバージョンを追記します。
-// 文字列の "alpha" もしくは "beta" がバージョン名に含まれている場合、不安定版の方に追記されます。
-// 不安定版は、最新 3件のみ保持します。
+// 文字列の "alpha" もしくは "beta" がバージョン名に含まれている場合、それらのバージョンのリストに追記されます。
+// alpha, beta版は、それぞれ最新 3件のみ保持します。
 const releasesJson = path.join(".", "releases.json");
 
 const UNSTABLE_VERSION_DISPLAY_NUM = 3;
 
-function appendVersionToList(version: string, isStable: boolean) {
-    const list = isStable ? releases.stable : releases.unstable;
+function appendVersionToList(version: string) {
+    const releaseType = getReleaseType(version);
+    const list = releases[releaseType];
+
     if (list.releases.find((target) => target === version)) {
         return;
     }
     list.releases.unshift(version);
-    if (!isStable && list.releases.length > UNSTABLE_VERSION_DISPLAY_NUM) {
+    if (releaseType !== "stable" && list.releases.length > UNSTABLE_VERSION_DISPLAY_NUM) {
         // 表示最大件数を超えたら最も古いバージョンを消す
         list.releases.pop();
     }
@@ -28,7 +32,16 @@ if( process.argv.length < 3 || !process.argv[2]) {
     process.exit();
 }
 
-const version = process.argv[2];
-const isStable = !version.match(/alpha/) && !version.match(/beta/);
+function getReleaseType(version: string): ReleaseType  {
+    if (version.match(/alpha/)) {
+        return "alpha";
+    }
+    if(version.match(/beta/)) {
+        return "beta";
+    }
+    return "stable"
+}
 
-appendVersionToList(version, isStable);
+const version = process.argv[2];
+
+appendVersionToList(version);
