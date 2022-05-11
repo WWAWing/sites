@@ -32,15 +32,19 @@ html(lang="ja")
                 | から、入手したいバージョン名を検索し、Assets 内 wwawing-dist.zip (完全版) もしくは wwawing-update.zip (更新版) をダウンロードしてください。
 
         if beta.releases.length
-            h3 beta 版 
-            p 現在は スマートフォンで操作できる仮想パッド機能 をお試しいただけます。
+            h3 β版 
+            p 現在は スマートフォンで操作できる仮想パッド機能 をお試しいただけます。仮想パッドの表示には、タッチ入力に対応したデバイスが必要です。
+            p
+                a(href="../beta/wwamap.html") beta 版の最新をテストプレイする
             ul
                 each version in beta.releases
                     +releaseListItem(version)
 
         if alpha.releases.length
-            h3 alpha 版
+            h3 α版
             p 効率的に条件分岐が記述できる新しい $if マクロの機能をお試しいただけます。
+            p
+                a(href="../alpha/wwamap.html") alpha 版の最新をテストプレイする
             ul
                 each version in alpha.releases
                     +releaseListItem(version)
