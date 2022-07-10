@@ -13,7 +13,8 @@ const UNSTABLE_VERSION_DISPLAY_NUM = 3;
 
 function appendVersionToList(version: string) {
     const releaseType = getReleaseType(version);
-    const list = releases[releaseType];
+    // 空配列の場合に never[] になってしまうので string[] に倒す
+    const list = releases[releaseType] as { releases: string[] };
 
     if (list.releases.find((target) => target === version)) {
         return;
