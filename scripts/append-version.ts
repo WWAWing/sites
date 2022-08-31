@@ -11,6 +11,7 @@ const releasesJson = path.join(".", "releases.json");
 
 const UNSTABLE_VERSION_DISPLAY_NUM = 3;
 
+// TODO: ワークフローから呼び出された時に新バージョン表記法をパースして適切な位置に追加する
 function appendVersionToList(version: string) {
     const releaseType = getReleaseType(version);
     // 空配列の場合に never[] になってしまうので string[] に倒す

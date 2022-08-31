@@ -1,12 +1,25 @@
-mixin releaseListItem(version)
-    li
-        | v#{version}
-        | (
-        a(href="https://github.com/WWAWing/WWAWing/releases/download/v" + version + "/wwawing-dist.zip") 完全版
-        | )
-        | (
-        a(href="https://github.com/WWAWing/WWAWing/releases/download/v" + version + "/wwawing-update.zip") 更新版
-        | )
+
+mixin releaseUnit(releaseUnit)
+  section 
+    h1 v#{releaseUnit.stable.version} 関連
+    +version(releaseUnit.stable.version)
+    if releaseUnit.unstable && releaseUnit.unstable.length > 0
+        each unstableBranch in releaseUnit.unstable
+            section
+                h1 v#{releaseUnit.stable.version} ベースの不安定版 (#{unstableBranch.tagName})
+                each release in unstableBranch.releases
+                    +version(release.version)
+
+mixin version(version)
+    ul
+        li
+            | v#{version}
+            | (
+            a(href="https://github.com/WWAWing/WWAWing/releases/download/v" + version + "/wwawing-dist.zip") 完全版
+            | )
+            | (
+            a(href="https://github.com/WWAWing/WWAWing/releases/download/v" + version + "/wwawing-update.zip") 更新版
+            | )
 
 doctype html
 html(lang="ja")
@@ -21,43 +34,10 @@ html(lang="ja")
                 a(href="https://github.com/WWAWing/WWAWing/releases/latest/download/wwawing-dist.zip") 完全版 
             li
                 a(href="https://github.com/WWAWing/WWAWing/releases/latest/download/wwawing-update.zip") 更新版 
-
-        if beta.releases.length || alpha.releases.length       
-            h2 不安定版
-            p 開発途中のバージョンを公開しています。
-            p 予告なく仕様が変更される場合がありますのでご注意ください。
-            p それぞれ、最大3バージョン表示しています。
-                | ここにない版をお探しの場合は、
-                a(href="https://github.com/WWAWing/WWAWing/releases") GitHub の Releases ページ
-                | から、入手したいバージョン名を検索し、Assets 内 wwawing-dist.zip (完全版) もしくは wwawing-update.zip (更新版) をダウンロードしてください。
-
-        if beta.releases.length
-            h3 β版 
-            p 現在は スマートフォンで操作できる仮想パッド機能 をお試しいただけます。仮想パッドの表示には、タッチ入力に対応したデバイスが必要です。
-            p
-                a(href="../beta/wwamap.html") beta 版の最新をテストプレイする
-            ul
-                each version in beta.releases
-                    +releaseListItem(version)
-
-        if alpha.releases.length
-            h3 α版
-            p 現在公開されているα版では、
-                a(href="https://wwawing.notion.site/if-else_if-else-endif-bae6a5ae44d04ad0a3530f20c3549aa9") 条件分岐マクロ
-                | 中にメッセージを書くことができるようになります。
-                | この他にできることは
-                a(href="https://github.com/WWAWing/WWAWing/releases/tag/v3.10.0-alpha.0") v3.10.0-alpha.0 のリリースノート
-                | をご覧ください。
-            p
-                a(href="../alpha/wwamap.html") alpha 版の最新をテストプレイする
-            ul
-                each version in alpha.releases
-                    +releaseListItem(version)
-
-        h2 安定版の過去のリリース
-        ul
-            each version in stable.releases
-                +releaseListItem(version)
+        h2 過去のリリース
+        div
+            each releaseUnit in releaseUnits 
+                +releaseUnit(releaseUnit)
 
         footer
             p
