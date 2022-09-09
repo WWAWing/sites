@@ -1,0 +1,84 @@
+h1 {
+  margin: 0;
+}
+
+.release-unit-section {
+  background-color: #EEEEEE;
+  padding: 14px;
+}
+
+.release-unit-section > h1 {
+  border-left: 5px solid #000000;
+  border-bottom: 1px solid #000000;
+  padding-left: 5px;
+}
+
+.release-unit-section:nth-child(2n) {
+  background-color: #DDDDDD;
+}
+
+.release-unit-section > h1 {
+  font-size: 24px;
+  padding-top: 5px;
+}
+
+.test-play-anchor {
+  height: 40px;
+  box-sizing: border-box;
+
+  display: inline-block;
+  border: 2px solid #000066;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 10px;
+  font-size: 18px;
+  line-height: 16px;
+
+  color: #000066;
+  background-color: #C8C8FF;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+}
+
+.test-play-anchor:hover {
+  opacity: 0.7;
+}
+
+.distribution-download-anchor {
+  height: 40px;
+  box-sizing: border-box;
+
+  display: inline-block;
+  border: 2px solid #006600;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 5px;
+  font-size: 18px;
+  line-height: 16px;
+
+  background-color: #C8FFC8;
+  color: #006600;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+}
+
+.distribution-download-anchor:hover {
+  opacity: 0.7;
+}
+
+
+.stable-area, .unstable-area {
+  display: flex;
+}
+
+.stable-section, .unstable-section {
+  padding: 12px 24px;
+  font-size: 18px;
+}
+
+.stable-section > h1, .unstable-section > h1 {
+  border-bottom: 1px solid #000000;
+  font-size: 18px;
+}
