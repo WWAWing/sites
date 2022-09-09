@@ -52,8 +52,11 @@ function appendVersionToList(version: Version) {
         newRelease,
         ...targetUnit.unstable[tagIndex].releases
     ];
-    writeReleasesJson(releaseUnits);
 
+    // タグの辞書順にソート
+    // 同一タグが来ることはないはずなので無視していい
+    releaseUnits[unitIndex].unstable?.sort((a, b) => a.tagName > b.tagName ? 1 : -1);
+    writeReleasesJson(releaseUnits);
 }
 
 if (process.argv.length < 3 || !process.argv[2]) {
