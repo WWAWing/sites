@@ -40,10 +40,10 @@ function appendVersionToList(version: Version) {
     const tagIndex = targetUnit.unstable.findIndex(u => version.prerelease && u.tagName === version.prerelease.tagName);
     // 不安定版: base になっている安定版に不安定版は 1 つ以上登録されているが、同一タグを持つバージョンが 1 つも登録されていない
     if (tagIndex === -1) {
-        releaseUnits[unitIndex].unstable = [{
+        releaseUnits[unitIndex].unstable?.unshift({
             tagName: version.prerelease.tagName,
             releases: [newRelease]
-        }];
+        });
         writeReleasesJson(releaseUnits);
         return;
     }

@@ -16,7 +16,8 @@ export interface Prerelease {
 }
 
 export function stringifyPrerelease({ tagName, baseVersion, prepatch }: Prerelease): string {
-    return `${tagName}.based-on.${baseVersion.major}.${baseVersion.minor}.${baseVersion.patch}.p.${prepatch}`;
+    const base = `${tagName}.based-on.${baseVersion.major}.${baseVersion.minor}.${baseVersion.patch}`;
+    return prepatch ? `${base}.p.${prepatch}` : base;
 }
 
 export function stringifyVersion({ prerelease, ...mainVersion }: Version): string {
@@ -28,8 +29,8 @@ export function stringifyMainVersion({ major, minor, patch }: MainVersion): stri
     return `${major}.${minor}.${patch}`;
 }
 
-export function parsePrerelease(preRelease: string): Prerelease {
-    const matches = preRelease.match(/^([a-zA-Z]+)\.based-on\.(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:\.p\.(0|[1-9]\d*))?$/);
+export function parsePrerelease(prerelease: string): Prerelease {
+    const matches = prerelease.match(/^([a-zA-Z]+)\.based-on\.(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:\.p\.(0|[1-9]\d*))?$/);
     if (!matches || matches.length < 5) {
         throw new Error("プレリリースのフォーマットを満たしていません");
     }
@@ -40,8 +41,8 @@ export function parsePrerelease(preRelease: string): Prerelease {
             minor: parseInt(matches[3], 10),
             patch: parseInt(matches[4], 10)
         },
-        prepatch: matches.length < 6 ? undefined : parseInt(matches[5], 10)
-    }
+        prepatch: matches[5] ? parseInt(matches[5], 10) : undefined
+    };
 }
 
 export function parseVersion(version: string): Version {
@@ -56,7 +57,7 @@ export function parseVersion(version: string): Version {
         major: parseInt(matches[1], 10),
         minor: parseInt(matches[2], 10),
         patch: parseInt(matches[3], 10),
-        prerelease: matches.length < 5 ? undefined : parsePrerelease(matches[4])
-    }
+        prerelease: matches[4] ? parsePrerelease(matches[4]) : undefined
+    };
 }
 
