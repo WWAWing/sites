@@ -1,12 +1,16 @@
 
-mixin releaseUnit(releaseUnit)
+mixin releaseUnit(releaseUnit, isLatest)
   section 
-    h1 v#{releaseUnit.stable.version} 関連
+    h1 v#{releaseUnit.stable.version} 関連 #{isLatest ? "(最新版)" : ""}
+    if isLatest
+        a(href="../wing/wwamap.html") Standard Map をテストプレイ
     +version(releaseUnit.stable.version)
     if releaseUnit.unstable && releaseUnit.unstable.length > 0
         each unstableBranch in releaseUnit.unstable
             section
                 h1 v#{releaseUnit.stable.version} ベースの不安定版 (#{unstableBranch.tagName})
+                if isLatest
+                    a(href="../" + unstableBranch.tagName + "/wwamap.html") Standard Map をテストプレイ
                 each release in unstableBranch.releases
                     +version(release.version)
 
@@ -28,16 +32,10 @@ html(lang="ja")
         title WWA Wing 配布ページ
     body
         h1 WWA Wing 配布ページ
-        h2 最新版
-        ul
-            li
-                a(href="https://github.com/WWAWing/WWAWing/releases/latest/download/wwawing-dist.zip") 完全版 
-            li
-                a(href="https://github.com/WWAWing/WWAWing/releases/latest/download/wwawing-update.zip") 更新版 
         h2 過去のリリース
         div
             each releaseUnit in releaseUnits 
-                +releaseUnit(releaseUnit)
+                +releaseUnit(releaseUnit, latestVersion === releaseUnit.stable.version)
 
         footer
             p

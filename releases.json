@@ -3,7 +3,25 @@
     {
       "stable": {
         "version": "3.9.7"
-      }
+      },
+      "unstable": [
+        {
+          "tagName": "alpha",
+          "releases": [
+            {
+              "version": "3.10.0-alpha.7"
+            }
+          ]
+        },
+        {
+          "tagName": "beta",
+          "releases": [
+            {
+              "version": "3.10.0-beta.6"
+            }
+          ]
+        }
+      ]
     },
     {
       "stable": {
