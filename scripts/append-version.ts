@@ -1,48 +1,70 @@
-import releases from "../releases.json";
+import { releaseUnits } from "../releases.json";
+import { type Version, stringifyVersion, stringifyMainVersion, parseVersion } from "./version-utils";
 import fs from "fs";
 import path from "path";
 
-type ReleaseType = "alpha" | "beta" | "stable";
-
 // releases.json に引数で与えられたバージョンを追記します。
-// 文字列の "alpha" もしくは "beta" がバージョン名に含まれている場合、それらのバージョンのリストに追記されます。
-// alpha, beta版は、それぞれ最新 3件のみ保持します。
+// バージョン内容をパースし、然るべき位置に該当バージョンを追記します。
 const releasesJson = path.join(".", "releases.json");
 
-const UNSTABLE_VERSION_DISPLAY_NUM = 3;
-
-function appendVersionToList(version: string) {
-    const releaseType = getReleaseType(version);
-    // 空配列の場合に never[] になってしまうので string[] に倒す
-    const list = releases[releaseType] as { releases: string[] };
-
-    if (list.releases.find((target) => target === version)) {
-        return;
-    }
-    list.releases.unshift(version);
-    if (releaseType !== "stable" && list.releases.length > UNSTABLE_VERSION_DISPLAY_NUM) {
-        // 表示最大件数を超えたら最も古いバージョンを消す
-        list.releases.pop();
-    }
-    fs.writeFileSync(releasesJson, JSON.stringify(releases) + "\n");
+function writeReleasesJson(newReleaseUnits: typeof releaseUnits) {
+    fs.writeFileSync(releasesJson, JSON.stringify({ releaseUnits: newReleaseUnits }) + "\n");
 }
 
-if( process.argv.length < 3 || !process.argv[2]) {
+function appendVersionToList(version: Version) {
+    const stringVersion = stringifyVersion(version);
+    const newRelease = { version: stringVersion };
+
+    // 安定版
+    if (!version.prerelease) {
+        releaseUnits.unshift({ stable: newRelease });
+        writeReleasesJson(releaseUnits);
+        return;
+    }
+    const unitIndex = releaseUnits.findIndex(unit => version.prerelease && unit.stable.version === stringifyMainVersion(version.prerelease.baseVersion));
+    const targetUnit = releaseUnits[unitIndex];
+    if (unitIndex === -1) {
+        throw new Error("まだリリースされていない stable バージョンが base に指定されています");
+    }
+
+    // 不安定版: base になっている 安定版にまだ不安定版が 1 つも登録されていない
+    if (!targetUnit.unstable) {
+        releaseUnits[unitIndex].unstable = [{
+            tagName: version.prerelease.tagName,
+            releases: [newRelease]
+        }];
+        writeReleasesJson(releaseUnits);
+        return;
+    }
+
+    const tagIndex = targetUnit.unstable.findIndex(u => version.prerelease && u.tagName === version.prerelease.tagName);
+    // 不安定版: base になっている安定版に不安定版は 1 つ以上登録されているが、同一タグを持つバージョンが 1 つも登録されていない
+    if (tagIndex === -1) {
+        releaseUnits[unitIndex].unstable?.unshift({
+            tagName: version.prerelease.tagName,
+            releases: [newRelease]
+        });
+        writeReleasesJson(releaseUnits);
+        return;
+    }
+    // 不安定版: 既に同一baseかつ同一タグのバージョンが登録されている
+    releaseUnits[unitIndex].unstable![tagIndex].releases = [
+        newRelease,
+        ...targetUnit.unstable[tagIndex].releases
+    ];
+
+    // タグの辞書順にソート
+    // 同一タグが来ることはないはずなので無視していい
+    releaseUnits[unitIndex].unstable?.sort((a, b) => a.tagName > b.tagName ? 1 : -1);
+    writeReleasesJson(releaseUnits);
+}
+
+if (process.argv.length < 3 || !process.argv[2]) {
     console.error(`Usage: ${process.argv[0]} ${process.argv[1]} X.X.X`);
     console.error("X.X.X is release version.")
     process.exit();
 }
 
-function getReleaseType(version: string): ReleaseType  {
-    if (version.match(/alpha/)) {
-        return "alpha";
-    }
-    if(version.match(/beta/)) {
-        return "beta";
-    }
-    return "stable"
-}
-
 const version = process.argv[2];
 
-appendVersionToList(version);
+appendVersionToList(parseVersion(version));
