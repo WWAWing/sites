@@ -30,7 +30,7 @@ export function stringifyMainVersion({ major, minor, patch }: MainVersion): stri
 }
 
 export function parsePrerelease(prerelease: string): Prerelease {
-    const matches = prerelease.match(/^([a-zA-Z]+)\.based-on\.(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:\.p\.(0|[1-9]\d*))?$/);
+    const matches = prerelease.match(/^([a-zA-Z-]+)\.based-on\.(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:\.p\.(0|[1-9]\d*))?$/);
     if (!matches || matches.length < 5) {
         throw new Error("プレリリースのフォーマットを満たしていません");
     }
