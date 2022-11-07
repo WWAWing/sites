@@ -17,6 +17,12 @@ DEST_DIR="./wwawing.com/wing"
 cp "$SRC_DIR/manual.html" $DEST_DIR
 cp "$SRC_DIR/mapdata/wwamap.dat" $DEST_DIR
 # cp "$SRC_DIR/mapdata/wwamap.dat" $DEST_DIR_NEW_MESSAGE_SYSTEM
+cp "$SRC_DIR/mapdata/wwa.js" $DEST_DIR
+# cp "$SRC_DIR/mapdata/wwa.js" $DEST_DIR_NEW_MESSAGE_SYSTEM
+cp "$SRC_DIR/mapdata/wwa.css" $DEST_DIR
+# cp "$SRC_DIR/mapdata/wwa.css" $DEST_DIR_NEW_MESSAGE_SYSTEM
+cp "$SRC_DIR/mapdata/style.css" $DEST_DIR
+# cp "$SRC_DIR/mapdata/style.css" $DEST_DIR_NEW_MESSAGE_SYSTEM
 cp "$SRC_DIR/mapdata/making.gif" $DEST_DIR
 # cp "$SRC_DIR/mapdata/making.gif" $DEST_DIR_NEW_MESSAGE_SYSTEM
 cp "$SRC_DIR/mapdata/island02.dat" $DEST_DIR
