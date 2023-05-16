@@ -22,7 +22,7 @@ export function stringifyPrerelease({ tagName, baseVersion, prepatch }: Prerelea
 
 export function stringifyVersion({ prerelease, ...mainVersion }: Version): string {
     const _mainVersion = stringifyMainVersion(mainVersion);
-    return prerelease ? `${_mainVersion}.${stringifyPrerelease(prerelease)}` : _mainVersion;
+    return prerelease ? `${_mainVersion}-${stringifyPrerelease(prerelease)}` : _mainVersion;
 }
 
 export function stringifyMainVersion({ major, minor, patch }: MainVersion): string {
