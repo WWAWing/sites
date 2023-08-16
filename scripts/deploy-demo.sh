@@ -28,7 +28,7 @@ cp -R "$SRC_DIR/mapdata/audio" $DEST_DIR
 rm -rf $SRC_DIR wwawing-dist wwawing-dist.zip
 
 ## unstable バージョン デプロイ
-if [ $(node -e "console.log(typeof require('./releases.json').releaseUnits[0].unstable)") == "undefined" ] ; then
+if [ "$(node -e "console.log(typeof require('./releases.json').releaseUnits[0].unstable)")" == "undefined" ] ; then
     exit;
 fi
 
