@@ -36,7 +36,7 @@ UNSTABLE_LATEST_VERSION=$(node -e "console.log(require('./releases.json').releas
 wget "https://github.com/WWAWing/WWAWing/releases/download/v$UNSTABLE_LATEST_VERSION/wwawing-dist.zip"
 unzip -d wwawing-dist wwawing-dist.zip
 
-DEST_DIR="./wwawing.com/acorn-statement" # WWA Script 不安定版の歴史的経緯でURLは変更しない
+DEST_DIR="./wwawing.com/unstable"
 cp "$SRC_DIR/mapdata/wwamap.dat" $DEST_DIR
 cp "$SRC_DIR/mapdata/wwa.js" $DEST_DIR
 cp "$SRC_DIR/mapdata/wwa.css" $DEST_DIR

@@ -37,3 +37,7 @@
 [[redirects]]
   from = "/wwap"
   to = "https://wwaphoenix.github.io/"
+
+[[redirects]]
+  from ="/acorn-statement/*"
+  to = "/unstable/:splat"
