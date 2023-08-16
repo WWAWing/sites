@@ -27,14 +27,16 @@ cp -R "$SRC_DIR/mapdata/audio" $DEST_DIR
 
 rm -rf $SRC_DIR wwawing-dist wwawing-dist.zip
 
-## acorn-statement バージョンのデプロイをベタ書きしています。
-## 今後、不安定版のプレビューが必要になった時はいい感じに改変してください。
-## HACK: プレビューをデプロイすべきタグ名を、releases.json の releaseUnits[0] から自動で取得して回したい。
-ACORN_STATEMENT_LATEST_VERSION=$(node -e "console.log(require('./releases.json').releaseUnits[0].unstable[0].releases[0].version)")
-wget "https://github.com/WWAWing/WWAWing/releases/download/v$ACORN_STATEMENT_LATEST_VERSION/wwawing-dist.zip"
+## unstable バージョン デプロイ
+if [ $(node -e "console.log(typeof require('./releases.json').releaseUnits[0].unstable)") == "undefined" ] ; then
+    exit;
+fi
+
+UNSTABLE_LATEST_VERSION=$(node -e "console.log(require('./releases.json').releaseUnits[0].unstable[0].releases[0].version)")
+wget "https://github.com/WWAWing/WWAWing/releases/download/v$UNSTABLE_LATEST_VERSION/wwawing-dist.zip"
 unzip -d wwawing-dist wwawing-dist.zip
 
-DEST_DIR="./wwawing.com/acorn-statement"
+DEST_DIR="./wwawing.com/acorn-statement" # WWA Script 不安定版の歴史的経緯でURLは変更しない
 cp "$SRC_DIR/mapdata/wwamap.dat" $DEST_DIR
 cp "$SRC_DIR/mapdata/wwa.js" $DEST_DIR
 cp "$SRC_DIR/mapdata/wwa.css" $DEST_DIR
