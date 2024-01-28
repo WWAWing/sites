@@ -44,7 +44,10 @@ cp "$SRC_DIR/mapdata/wwa.css" $DEST_DIR
 cp "$SRC_DIR/mapdata/style.css" $DEST_DIR
 cp "$SRC_DIR/mapdata/making.gif" $DEST_DIR
 cp "$SRC_DIR/mapdata/cover.gif" $DEST_DIR
-cp "$SRC_DIR/mapdata/picture_test-picture.json" $DEST_DIR
 cp -R "$SRC_DIR/mapdata/audio" $DEST_DIR
+
+# ピクチャ機能で使用
+cp "$SRC_DIR/mapdata/picture_test-picture.json" $DEST_DIR
+cp "$SRC_DIR/mapdata/wwawing-disp.png" $DEST_DIR
 
 rm -rf $SRC_DIR ./wwawing-dist ./wwawing-dist.zip
