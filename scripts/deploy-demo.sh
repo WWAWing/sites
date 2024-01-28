@@ -38,11 +38,20 @@ unzip -d wwawing-dist wwawing-dist.zip
 
 DEST_DIR="./wwawing.com/unstable"
 cp "$SRC_DIR/mapdata/wwamap.dat" $DEST_DIR
+if [ -e "$SRC_DIR/mapdata/picture_test.dat" ] ; then
+    cp "$SRC_DIR/mapdata/picture_test.dat" $DEST_DIR
+fi
 cp "$SRC_DIR/mapdata/wwa.js" $DEST_DIR
 cp "$SRC_DIR/mapdata/wwa.css" $DEST_DIR
 cp "$SRC_DIR/mapdata/style.css" $DEST_DIR
 cp "$SRC_DIR/mapdata/making.gif" $DEST_DIR
 cp "$SRC_DIR/mapdata/cover.gif" $DEST_DIR
 cp -R "$SRC_DIR/mapdata/audio" $DEST_DIR
+
+# ピクチャ機能で使用
+if [ -e "$SRC_DIR/mapdata/picture_test-picture.json" ] ; then
+    cp "$SRC_DIR/mapdata/picture_test-picture.json" $DEST_DIR
+    cp "$SRC_DIR/mapdata/wwawing-disp.png" $DEST_DIR
+fi
 
 rm -rf $SRC_DIR ./wwawing-dist ./wwawing-dist.zip
