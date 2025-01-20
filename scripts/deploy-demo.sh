@@ -55,4 +55,23 @@ if [ -e "$SRC_DIR/mapdata/picture_test-picture.json" ] ; then
     cp "$SRC_DIR/mapdata/wwawing-disp.png" $DEST_DIR
 fi
 
+# ピクチャ機能入門で改造したケーブダンジョン1で使用
+if [ -e "$SRC_DIR/mapdata/caves01.gif" ] ; then
+    cp "$SRC_DIR/mapdata/wwa.js" "$DEST_DIR/caves01_picture"
+    cp "$SRC_DIR/mapdata/wwa.css" "$DEST_DIR/caves01_picture"
+    cp "$SRC_DIR/mapdata/style.css" "$DEST_DIR/caves01_picture"
+    cp "$SRC_DIR/mapdata/caves01.gif" "$DEST_DIR/caves01_picture"
+    cp "$SRC_DIR/mapdata/cover.gif" "$DEST_DIR/caves01_picture"
+    mkdir -p "$DEST_DIR/caves01_picture/audio"
+    cp "$SRC_DIR/mapdata/audio/1.mp3" "$DEST_DIR/caves01_picture/audio"
+    cp "$SRC_DIR/mapdata/audio/3.mp3" "$DEST_DIR/caves01_picture/audio"
+    cp "$SRC_DIR/mapdata/audio/11.mp3" "$DEST_DIR/caves01_picture/audio"
+    cp "$SRC_DIR/mapdata/audio/12.mp3" "$DEST_DIR/caves01_picture/audio"
+    cp "$SRC_DIR/mapdata/audio/13.mp3" "$DEST_DIR/caves01_picture/audio"
+    cp "$SRC_DIR/mapdata/audio/16.mp3" "$DEST_DIR/caves01_picture/audio"
+    cp "$SRC_DIR/mapdata/audio/70.mp3" "$DEST_DIR/caves01_picture/audio"
+    cp "$SRC_DIR/mapdata/audio/71.mp3" "$DEST_DIR/caves01_picture/audio"
+    cp "$SRC_DIR/mapdata/audio/72.mp3" "$DEST_DIR/caves01_picture/audio"
+fi
+
 rm -rf $SRC_DIR ./wwawing-dist ./wwawing-dist.zip
