@@ -5,7 +5,7 @@ mixin releaseUnit(releaseUnit, isLatest)
         | v#{releaseUnit.stable.version} 関連 #{isLatest ? "(最新版)" : ""}
     div(class="stable-area")
         section(class="stable-section")
-            h1 安定版 
+            h2 安定版 
                 if isLatest
                     a(href="../wing/wwamap.html" class="test-play-anchor") テストプレイ
             +version(releaseUnit.stable.version)
@@ -13,7 +13,7 @@ mixin releaseUnit(releaseUnit, isLatest)
         if releaseUnit.unstable && releaseUnit.unstable.length > 0
             each unstableBranch in releaseUnit.unstable
                 section(class="unstable-section")
-                    h1 不安定版 (#{unstableBranch.tagName})
+                    h2 不安定版 (#{unstableBranch.tagName})
                         if isLatest
                             a(href="../" + unstableBranch.tagName + "/wwamap.html" class="test-play-anchor") テストプレイ
                     each release in unstableBranch.releases
@@ -23,7 +23,7 @@ mixin version(version, isLatest)
     ul
         li
             section(class="distribition-download-section")
-                h1 v#{version}
+                h3 v#{version}
                 a(href="https://github.com/WWAWing/WWAWing/releases/download/v" + version + "/wwawing-dist.zip" class="distribution-download-anchor") 完全版を入手
                 a(href="https://github.com/WWAWing/WWAWing/releases/download/v" + version + "/wwawing-update.zip" class="distribution-download-anchor") 更新版を入手
 
