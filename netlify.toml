@@ -3,8 +3,8 @@
   command = "npm start"
 
 [build.environment]
-  NODE_VERSION = "22.18.0"
-  NPM_VERSION = "10"
+  NODE_VERSION = "22.20.0"
+  NPM_VERSION = "11"
 
 [[redirects]]
   from = "/wing/24life.html"
