@@ -21,7 +21,7 @@ jobs:
           echo "BRANCH_NAME=feature/update-to-v${{ github.event.client_payload.targetVersion }}" >> "$GITHUB_ENV"
 
       - name: "Install"
-        run: "npm i"
+        run: "npm ci"
 
       - name: "Append the latest version to releases.json"
         run:  "npx ts-node ./scripts/append-version.ts ${{ env.WWA_WING_VERSION }}"

@@ -11,7 +11,7 @@ FQDN がディレクトリ名と対応しています。
 
 ## 必要な環境
 - node 22
-- npm 10
+- npm 11
 - **※ \*nix環境以外でのページ生成はサポートされていません。 お手数ですが、Windows の方は Windows Subsystem for Linux のご利用をお願いいたします。**
 
 ## CI類
