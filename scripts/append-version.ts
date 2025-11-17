@@ -1,5 +1,5 @@
-import { releaseUnits } from "../releases.json";
-import { type Version, stringifyVersion, stringifyMainVersion, parseVersion } from "./version-utils";
+import { data } from "../releases.json";
+import { type Version, stringifyVersion, parseVersion } from "./version-utils";
 import fs from "fs";
 import path from "path";
 
@@ -7,8 +7,8 @@ import path from "path";
 // バージョン内容をパースし、然るべき位置に該当バージョンを追記します。
 const releasesJson = path.join(".", "releases.json");
 
-function writeReleasesJson(newReleaseUnits: typeof releaseUnits) {
-    fs.writeFileSync(releasesJson, JSON.stringify({ releaseUnits: newReleaseUnits }) + "\n");
+function writeReleasesJson(newData: typeof data) {
+    fs.writeFileSync(releasesJson, JSON.stringify({ data: newData }) + "\n");
 }
 
 function appendVersionToList(version: Version) {
@@ -16,47 +16,18 @@ function appendVersionToList(version: Version) {
     const newRelease = { version: stringVersion };
 
     // 安定版
-    if (!version.prerelease) {
-        releaseUnits.unshift({ stable: newRelease });
-        writeReleasesJson(releaseUnits);
+    if (version.major === 3) {
+        data.stable.releases.unshift(newRelease);
+        writeReleasesJson(data);
         return;
     }
-    const unitIndex = releaseUnits.findIndex(unit => version.prerelease && unit.stable.version === stringifyMainVersion(version.prerelease.baseVersion));
-    const targetUnit = releaseUnits[unitIndex];
-    if (unitIndex === -1) {
-        throw new Error("まだリリースされていない stable バージョンが base に指定されています");
-    }
-
-    // 不安定版: base になっている 安定版にまだ不安定版が 1 つも登録されていない
-    if (!targetUnit.unstable) {
-        releaseUnits[unitIndex].unstable = [{
-            tagName: version.prerelease.tagName,
-            releases: [newRelease]
-        }];
-        writeReleasesJson(releaseUnits);
+    // 不安定版
+    if (version.major === 4) {
+        data.unstable.releases.unshift(newRelease);
+        writeReleasesJson(data);
         return;
     }
-
-    const tagIndex = targetUnit.unstable.findIndex(u => version.prerelease && u.tagName === version.prerelease.tagName);
-    // 不安定版: base になっている安定版に不安定版は 1 つ以上登録されているが、同一タグを持つバージョンが 1 つも登録されていない
-    if (tagIndex === -1) {
-        releaseUnits[unitIndex].unstable?.unshift({
-            tagName: version.prerelease.tagName,
-            releases: [newRelease]
-        });
-        writeReleasesJson(releaseUnits);
-        return;
-    }
-    // 不安定版: 既に同一baseかつ同一タグのバージョンが登録されている
-    releaseUnits[unitIndex].unstable![tagIndex].releases = [
-        newRelease,
-        ...targetUnit.unstable[tagIndex].releases
-    ];
-
-    // タグの辞書順にソート
-    // 同一タグが来ることはないはずなので無視していい
-    releaseUnits[unitIndex].unstable?.sort((a, b) => a.tagName > b.tagName ? 1 : -1);
-    writeReleasesJson(releaseUnits);
+    throw new TypeError("Invalid version major number");
 }
 
 if (process.argv.length < 3 || !process.argv[2]) {

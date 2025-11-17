@@ -82,17 +82,22 @@
             </button>
             <a class="navbar-brand" href="./">
               <img src="./assets/wwawing/wwawing-disp.png" alt="WWA Wing">
-              <span class="version-wwa" id="version-wwa-nav">{{ ##FILL_LATEST_VERSION## }}</span>
+              <span class="version-wwa" id="version-wwa-nav">
+                <span class="latest-stable-version">{{ ##FILL_LATEST_STABLE_VERSION## }}</span> /
+                <span class="latest-unstable-version">{{ ##FILL_LATEST_UNSTABLE_VERSION## }}</span>
+              </span>
             </a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li><a href="https://github.com/WWAWing/WWAWing/releases/latest/download/wwawing-dist.zip" class="dl-wwa" role="button"><span
+              <li><a href="https://github.com/WWAWing/WWAWing/releases/latest/download/wwawing-dist.zip" class="dl-stable-wwa" role="button"><span
                     class="glyphicon glyphicon-download-alt"></span> 完全版</a></li>
-              <li><a href="https://github.com/WWAWing/WWAWing/releases/latest/download/wwawing-update.zip" class="dl-wwa" role="button"><span
+              <li><a href="https://github.com/WWAWing/WWAWing/releases/latest/download/wwawing-update.zip" class="dl-stable-wwa" role="button"><span
                     class="glyphicon glyphicon-download-alt"></span> 更新版</a></li>
-              <li><a href="https://wwaphoenix.github.io/" class="dl-wwa" role="button"><span class="glyphicon glyphicon-file"></span>
-                  Phoenix</a></li>
+              <li><a href="https://github.com/WWAWing/WWAWing/releases/download/{{ ##FILL_LATEST_UNSTABLE_VERSION## }}/wwawing-dist.zip" class="dl-unstable-wwa" role="button"><span
+                    class="glyphicon glyphicon-download-alt"></span> 完全版（不安定版）</a></li>
+              <li><a href="https://github.com/WWAWing/WWAWing/releases/download/{{ ##FILL_LATEST_UNSTABLE_VERSION## }}/wwawing-update.zip" class="dl-unstable-wwa" role="button"><span
+                    class="glyphicon glyphicon-download-alt"></span> 更新版（不安定版）</a></li>
               <li><a href="https://wwawing.notion.site/WWA-Wing-1fca5acaf51a4df38b953c478c8b9a5e" class="other-wwa" role="button"><span
                     class="glyphicon glyphicon-book"></span> マニュアル</a></li>
               <li><a href="https://blog.wwawing.com/" class="other-wwa" role="button"><span
@@ -133,27 +138,30 @@
               <a href="https://github.com/WWAWing/WWAWing/releases/latest/download/wwawing-dist.zip" class="btn  btn-success" role="button"><i
                   class="glyphicon glyphicon-download-alt"></i> 開発ツール完全版</a>
               <a href="https://github.com/WWAWing/WWAWing/releases/latest/download/wwawing-update.zip" class="btn  btn-success" role="button"><i
-                  class="glyphicon glyphicon-download-alt"></i> 最新版への更新ファイル</a>
+                  class="glyphicon glyphicon-download-alt"></i> 安定最新版への更新ファイル</a>
             </p>
           </div>
         </div>
       </div>
       <div class="item">
+        <!-- HACK: 可能なら背景画像を差し替えたい -->
         <img class="second-slide" src="./assets/wwawing/secondBG.jpg" alt="Second slide">
         <div class="container">
           <div class="carousel-caption">
-            <h1>わずらわしい警告も、面倒な操作もありません。</h1>
-            <p>WWAは、プレイのためにセキュリティ関連の特殊な操作が必要になってしまいました。</p>
-            <p>WWA Wing/Phoenixは、このわずらわしさからあなたを解放します。</p>
-            <p><a class="btn btn-lg btn-primary" href="https://wwaphoenix.github.io/" role="button"><i class="glyphicon glyphicon-file"></i>
-                既存のWWAも遊ぶ</a>
-              <a class="btn btn-lg btn-primary go-to-examples" href="#" role="button"><i
-                  class="glyphicon glyphicon-play-circle"></i> サンプルマップ</a></p>
-          </div>
+            <h1>WWA Script とピクチャ機能 で広がる世界</h1>
+            <p>不安定版で導入された WWA Script とピクチャ機能 により、WWAの表現力が大幅に向上しました。</p>
+            <p>JavaScript に近い記述方法で、より複雑な動作を実現できます。</p>
+            <p>
+              <a href="https://github.com/WWAWing/WWAWing/releases/latest/download/wwawing-dist.zip" class="btn  btn-warning" role="button"><i
+                  class="glyphicon glyphicon-download-alt"></i> 完全版（不安定版）</a>
+              <a href="https://github.com/WWAWing/WWAWing/releases/latest/download/wwawing-update.zip" class="btn  btn-warning" role="button"><i
+                  class="glyphicon glyphicon-download-alt"></i> 最新版（不安定版）への更新ファイル</a>
+            </p>
+         </div>
         </div>
       </div>
       <div class="item">
-        <img class="third-slide" src="./assets/wwawing/tb.jpg" alt="Third slide">
+        <img class="second-slide" src="./assets/wwawing/tb.jpg" alt="Third slide">
         <div class="container">
           <div class="carousel-caption">
             <h1>好きな時に、好きな端末で遊ぶことができます。</h1>
@@ -175,10 +183,10 @@
   <div class="container marketing">
     <div class="row">
       <div class="alert alert-warning">
-        <h4><span class="glyphicon glyphicon-warning-sign"></span>【およそ10年以上昔のPCをご利用の方へのご案内です】</h4>
-        <p>WWA Wing の動作確認ツール (wwa-server.exe) の 2022年3月31日にリリースされた v3.7.0 以降のバージョンは、 32 ビット版 Windows では、動作しません。</p>
-        <p>32ビット版 Windows で動作確認を行う場合は、代わりに WWA Contest のサイトで配布されている<a href="https://wwacontest.aruneko.net/debugger/">WWA Debugger</a>のご利用を推奨します。</p>
-        <p>詳しくは<a href="https://twitter.com/wwa_wing/status/1496461478429278211">Twitter での告知</a>をご覧ください。</p>
+        <h4><span class="glyphicon glyphicon-warning-sign"></span>【32ビット版 Windows のサポート終了について】</h4>
+        <p>32ビット版 Windows は Windows 10 の通常サポート終了により、ほとんどの場合利用が推奨されていません。WWA Wing の関連ツールでもサポートは終了しています。</p>
+        <p>WWA Wing の動作確認ツール (wwa-server.exe) の 2022年3月31日にリリースされた v3.7.0 以降のバージョンは、 32 ビット版 Windows では動作しません。</p>
+        <p>Windows 10 ESU などを利用している場合や、その他やむを得ない事情により32ビット版 Windows を利用する場合には、代わりに WWA Contest のサイトで配布されている<a href="https://wwacontest.aruneko.net/debugger/">WWA Debugger</a>のご利用を推奨します。</p>
       </div>
       <div class="col-lg-4">
         <img class="img-circle" src="./assets/wwawing/cross.gif" alt="Generic placeholder image" width="140"
@@ -190,9 +198,10 @@
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
         <img class="img-circle" src="./assets/wwawing/old.gif" alt="Generic placeholder image" width="140" height="140">
-        <h2>昔のWWAも!</h2>
-        <p>WWA Phoenixを使えば、10年以上前に作られたJava版のWWAも遊べるようになります。（効果音再生などに一部制限があります。）</p>
-        <p><a class="btn btn-default" href="https://wwaphoenix.github.io/" role="button">WWA Phoenixについて詳しく &raquo;</a></p>
+        <h2>昔のWWAを遊びたい方へ</h2>
+        <p>Java版WWAをプレイしたい場合は、Cheerpj の利用を推奨します。（WWA Wing, WWA Phoenix でのサポートは終了しました）</p>
+        <!-- UNDONE: Cheerpj を使った起動方法を書き、リンクを貼る-->
+<!--        <p><a class="btn btn-default" href="https://wwaphoenix.github.io/" role="button">WWA Phoenixについて詳しく &raquo;</a></p> -->
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
         <img class="img-circle" src="./assets/wwawing/dev.gif" alt="Generic placeholder image" width="140" height="140">

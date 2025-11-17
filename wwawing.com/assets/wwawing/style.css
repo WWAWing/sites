@@ -6,6 +6,9 @@ h1 {
 }
 
 a.navbar-brand  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 5px 15px;
 }
 span.version-wwa {
@@ -29,16 +32,28 @@ ul.navbar-nav>li>a  {
     font-weight: bold;
     margin: 3px;
     border-radius: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
-ul.navbar-nav>li>a.dl-wwa  {
+ul.navbar-nav>li>a.dl-stable-wwa  {
     border-color: #006600;
     background-color: rgb(200, 255, 200);
 }
 
-ul.navbar-nav>li>a.dl-wwa:hover {
+ul.navbar-nav>li>a.dl-stable-wwa:hover {
     background-color: rgb(130, 255, 130);
 }
+
+ul.navbar-nav>li>a.dl-unstable-wwa  {
+    border-color: #FFC107;
+    background-color: rgb(255, 255, 130);
+}
+
+ul.navbar-nav>li>a.dl-unstable-wwa:hover {
+    background-color: rgb(255, 255, 130);
+}
+
 
 ul.navbar-nav>li>a.report-bug-wwa  {
     border-color: #660000;

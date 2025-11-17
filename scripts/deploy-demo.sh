@@ -2,9 +2,9 @@
 
 set -eu
 
-## スタンダードマップとマニュアルを最新から持ってきて配置
-LATEST_VERSION=$(node -e "console.log(require('./releases.json').releaseUnits[0].stable.version)")
-wget "https://github.com/WWAWing/WWAWing/releases/download/v$LATEST_VERSION/wwawing-dist.zip"
+## 安定版デプロイ 
+STABLE_LATEST_VERSION=$(node -e "console.log(require('./releases.json').data.stable.releases[0].version)")
+wget "https://github.com/WWAWing/WWAWing/releases/download/v$STABLE_LATEST_VERSION/wwawing-dist.zip"
 unzip -d wwawing-dist wwawing-dist.zip
   
 SRC_DIR="./wwawing-dist/wwawing-dist"
@@ -27,12 +27,8 @@ cp -R "$SRC_DIR/mapdata/audio" $DEST_DIR
 
 rm -rf $SRC_DIR wwawing-dist wwawing-dist.zip
 
-## unstable バージョン デプロイ
-if [ "$(node -e "console.log(typeof require('./releases.json').releaseUnits[0].unstable)")" == "undefined" ] ; then
-    exit;
-fi
-
-UNSTABLE_LATEST_VERSION=$(node -e "console.log(require('./releases.json').releaseUnits[0].unstable[0].releases[0].version)")
+## 不安定版デプロイ
+UNSTABLE_LATEST_VERSION=$(node -e "console.log(require('./releases.json').data.unstable.releases[0].version)")
 wget "https://github.com/WWAWing/WWAWing/releases/download/v$UNSTABLE_LATEST_VERSION/wwawing-dist.zip"
 unzip -d wwawing-dist wwawing-dist.zip
 

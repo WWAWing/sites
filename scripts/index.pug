@@ -1,31 +1,14 @@
 
 mixin releaseUnit(releaseUnit, isLatest)
   section(class="release-unit-section")
-    h1
-        | v#{releaseUnit.stable.version} 関連 #{isLatest ? "(最新版)" : ""}
-    div(class="stable-area")
-        section(class="stable-section")
-            h2 安定版 
-                if isLatest
-                    a(href="../wing/wwamap.html" class="test-play-anchor") テストプレイ
-            +version(releaseUnit.stable.version)
-    div(class="unstable-area")
-        if releaseUnit.unstable && releaseUnit.unstable.length > 0
-            each unstableBranch in releaseUnit.unstable
-                section(class="unstable-section")
-                    h2 不安定版 (#{unstableBranch.tagName})
-                        if isLatest
-                            a(href="../" + unstableBranch.tagName + "/wwamap.html" class="test-play-anchor") テストプレイ
-                    each release in unstableBranch.releases
-                        +version(release.version, isLatest)
+    h3 v#{releaseUnit.version} #{isLatest ? "(最新版)" : ""}
+    div(class="action-area")
+        a(href="https://github.com/WWAWing/WWAWing/releases/download/v" + releaseUnit.version + "/wwawing-dist.zip" class="distribution-download-anchor") 完全版を入手
+        a(href="https://github.com/WWAWing/WWAWing/releases/download/v" + releaseUnit.version + "/wwawing-update.zip" class="distribution-download-anchor") 更新版を入手
+        a(href="https://github.com/WWAWing/WWAWing/releases/tag/v" + releaseUnit.version class="info-anchor") リリースノート
+        if isLatest
+            a(href="../wing/wwamap.html" class="info-anchor") テストプレイ
 
-mixin version(version, isLatest)
-    ul
-        li
-            section(class="distribition-download-section")
-                h3 v#{version}
-                a(href="https://github.com/WWAWing/WWAWing/releases/download/v" + version + "/wwawing-dist.zip" class="distribution-download-anchor") 完全版を入手
-                a(href="https://github.com/WWAWing/WWAWing/releases/download/v" + version + "/wwawing-update.zip" class="distribution-download-anchor") 更新版を入手
 
 doctype html
 html(lang="ja")
@@ -36,13 +19,21 @@ html(lang="ja")
     body
         section(class="main-section")
             h1 WWA Wing 配布ページ
-            div
-                each releaseUnit in releaseUnits 
-                    +releaseUnit(releaseUnit, latestVersion === releaseUnit.stable.version)
+            div(class="main-area")
+                section(class="stable-release-section")
+                    h2 安定版
+                    each releaseUnit in data.stable.releases
+                        +releaseUnit(releaseUnit, stableLatestVersion === releaseUnit.version)
+                    footer
+                        p
+                            a(href="./old-releases") さらに過去の安定版を見る
+
+                section(class="unstable-release-section")
+                    h2 不安定版
+                    each releaseUnit in data.unstable.releases
+                        +releaseUnit(releaseUnit, unstableLatestVersion === releaseUnit.version)
 
         footer
-            p
-                a(href="./old-releases") さらに過去のリリースを見る
             p
                 a(href="../") WWA Wingのトップに戻る
             p
