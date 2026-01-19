@@ -1,10 +1,10 @@
 
-mixin releaseUnit(releaseUnit, isLatest)
+mixin releaseUnit(releaseUnit, isLatest, isUnstable=false)
   section(class="release-unit-section")
     h3 v#{releaseUnit.version} #{isLatest ? "(最新版)" : ""}
     div(class="action-area")
-        a(href="https://github.com/WWAWing/WWAWing/releases/download/v" + releaseUnit.version + "/wwawing-dist.zip" class="distribution-download-anchor") 完全版を入手
-        a(href="https://github.com/WWAWing/WWAWing/releases/download/v" + releaseUnit.version + "/wwawing-update.zip" class="distribution-download-anchor") 更新版を入手
+        a(href="https://github.com/WWAWing/WWAWing/releases/download/v" + releaseUnit.version + "/wwawing-dist.zip" class="distribution-download-anchor" + (isUnstable ? " unstable-distribution-download-anchor" : "")) 完全版を入手
+        a(href="https://github.com/WWAWing/WWAWing/releases/download/v" + releaseUnit.version + "/wwawing-update.zip" class="distribution-download-anchor" + (isUnstable ? " unstable-distribution-download-anchor" : "")) 更新版を入手
         a(href="https://github.com/WWAWing/WWAWing/releases/tag/v" + releaseUnit.version class="info-anchor") リリースノート
         if isLatest
             a(href="../wing/wwamap.html" class="info-anchor") テストプレイ
@@ -31,7 +31,7 @@ html(lang="ja")
                 section(class="unstable-release-section")
                     h2 不安定版
                     each releaseUnit in data.unstable.releases
-                        +releaseUnit(releaseUnit, unstableLatestVersion === releaseUnit.version)
+                        +releaseUnit(releaseUnit, unstableLatestVersion === releaseUnit.version, true)
 
         footer
             p
