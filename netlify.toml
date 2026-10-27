@@ -1,10 +1,11 @@
 [build]
   publish = "wwawing.com"
-  command = "npm start"
+  command = "pnpm start"
 
-[build.environment]
-  NODE_VERSION = "24.22.1"
-  NPM_VERSION = "11.11.0"
+  # 以下の理由により、 Node.js のバージョンはここでは指定しない。
+  # - Netlify は Node.js のバージョンの決定に nvm か mise のどちらかが使われる。
+  #   - nvm の場合は .node-version を見るので解決される。
+  #   - mise の場合は mise.toml に idiomatic_version_file_enable_tools の指定があるので、結局 .node-version を参照する。
 
 [[redirects]]
   from = "/wing/24life.html"

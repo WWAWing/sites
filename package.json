@@ -20,8 +20,7 @@
   "homepage": "https://github.com/WWAWing/sites#readme",
   "devDependencies": {
     "@types/escape-html": "^1.0.4",
-    "@types/jszip": "^3.4.1",
-    "@types/node": "^24.0.0",
+    "@types/node": "^26.0.0",
     "@types/pug": "^2.0.10",
     "@types/shelljs": "^0.8.15",
     "escape-html": "^1.0.3",
@@ -35,10 +34,9 @@
     "@octokit/rest": "^22.0.1"
   },
   "engines": {
-    "node": ">=24",
-    "npm": ">=11"
+    "node": ">=26",
+    "npm": "使えない",
+    "pnpm": ">=12"
   },
-  "volta": {
-    "node": "24.22.1"
-  }
+  "packageManager": "pnpm@12.14.0"
 }
